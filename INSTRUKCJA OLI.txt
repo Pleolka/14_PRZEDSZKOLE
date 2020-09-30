@@ -1,0 +1,14 @@
+****GATSBY****
+
+//INSTALACJA:
+npm install -g gatsby-cli
+
+//NOWY PROJEKT:
+gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
+
+//RUN I BUILD:
+gatsby develop
+npm run develop
+
+gatsby build
+
