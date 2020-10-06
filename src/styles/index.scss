@@ -1,0 +1,32 @@
+// Utils
+@import "utils/_variable.scss";
+@import "utils/_mixin.scss";
+/*
+    variables
+    mixins
+    functions
+    placeholders
+*/
+
+// Vendors
+@import "vendors/breakpoint-sass/_breakpoint.scss";
+@import "vendors/plumber-sass/_plumber.scss";
+
+// Vendors extensions
+@import "vendor_extensions/_breakpoint_ext.scss";
+@import "vendor_extensions/_plumber_ext.scss";
+
+// Base
+@import "base/_szablon.scss";
+/*
+    base
+    normalize
+    typography
+*/
+
+//Components
+@import "../components/componentstyles/navbar";
+@import "../components/componentstyles/layout";
+@import "../components/componentstyles/header";
+@import "../components/componentstyles/footer";
+@import "../components/componentstyles/card";

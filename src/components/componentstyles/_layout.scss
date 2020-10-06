@@ -1,0 +1,16 @@
+.content-wraper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-img {
+    flex-grow: 1;
+    position: absolute;
+    background-color: white;
+    min-width: 100%;
+    //height: auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

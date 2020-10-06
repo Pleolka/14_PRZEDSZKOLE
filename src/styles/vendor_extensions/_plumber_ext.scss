@@ -1,0 +1,12 @@
+﻿/*@include plumber-set-defaults( $grid-height: 1rem, $baseline: 0.158203, $font-size: 1.75, $line-height: 3, $leading-top: 1, $leading-bottom: 2 );
+
+p {
+    // using only default values
+    @include plumber();
+}*/
+@include plumber-set-defaults($grid-height: 0.7rem,
+    $baseline: 0.112061,
+    $font-size: 1.75,
+    $line-height: 3,
+    $leading-top: 0,
+    $leading-bottom: 0);

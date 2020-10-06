@@ -1,0 +1,202 @@
+﻿//==============================
+// PODSTAWOWE ELEMENTY HTML
+//==============================
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+}
+
+body {
+    background-color: transparent;
+    font-size: $font-size;
+    font-family: $font-main;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    color: $color-font;
+}
+
+p {
+    font-size: $font-size;
+    color: $color-font;
+    margin: 0;
+    padding: 0;
+    font-family: $font-main;
+}
+
+sub,
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -.25em;
+}
+
+sup {
+    top: -.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-header;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1;
+    color: $color-primary;
+}
+
+h1 {
+    font-size: calc((0.4vw + 12px) * 3);
+}
+
+h2 {
+    font-size: calc(#{$font-size} * 2.5);
+}
+
+h3 {
+    font-size: calc(#{$font-size} * 2);
+}
+
+h4 {
+    font-size: calc(#{$font-size} * 1.8);
+}
+
+h5 {
+    font-size: calc(#{$font-size} * 1.5);
+}
+
+h6 {
+    font-size: calc(#{$font-size} * 1.2);
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0rem;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    line-height: 1.5;
+}
+
+li {
+    font-size: $font-size;
+    font-family: $font-main;
+    color: $color-font;
+    margin-left: 1rem;
+    margin-top: 7px;
+}
+
+a {
+    color: $color-font;
+    font-size: $font-size;
+    font-family: $font-main;
+    text-decoration: none;
+    background-color: transparent;
+
+    &:hover {
+        color: $color-primary;
+        text-decoration: none;
+    }
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include breakpoint($mobile) {
+        max-width: 540px;
+    }
+
+    @include breakpoint($tablet) {
+        max-width: 720px;
+    }
+
+    @include breakpoint($desktop) {
+        max-width: 960px;
+    }
+
+    @include breakpoint($wide) {
+        max-width: 1200px;
+    }
+
+    @include breakpoint($extrawide) {
+        max-width: 1600px;
+    }
+
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mobile-only {
+    @include breakpoint ($mobile) {
+        display: unset;
+    }
+
+    @include breakpoint ($all-mobile) {
+        display: none;
+    }
+}
+
+
+.phone-no,
+.mobile-no {
+    @include breakpoint($mobile) {
+        display: none;
+    }
+}
+
+.mobile-no {
+    @include breakpoint($tablet) {
+        display: none;
+    }
+}

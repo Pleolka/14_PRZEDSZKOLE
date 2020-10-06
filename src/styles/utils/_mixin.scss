@@ -1,0 +1,86 @@
+﻿// BACKGROUND IMAGE
+@mixin bg-image ($bg-img, $bg-repeat: no-repeat, $bg-attachment: fixed, $bg-position-x: center, $bg-position-y: center, $bg-size: cover) {
+    background-image: url($bg-img);
+    background-repeat: $bg-repeat;
+    background-attachment: $bg-attachment;
+    background-position-x: $bg-position-x;
+    background-position-y: $bg-position-y;
+    -webkit-background-size: $bg-size;
+    -moz-background-size: $bg-size;
+    -o-background-size: $bg-size;
+    background-size: $bg-size;
+}
+
+// SHADOW MAKER
+@mixin drop-shadow($x: 0px, $y: 4px, $blur: 7px, $size: 2px, $alpha: 0.15) {
+    -webkit-box-shadow: $x $y $blur $size rgba(0, 0, 0, $alpha);
+    -moz-box-shadow: $x $y $blur $size rgba(0, 0, 0, $alpha);
+    box-shadow: $x $y $blur $size rgba(0, 0, 0, $alpha);
+}
+
+// BORDERS
+
+@mixin border-left ($color, $type, $weight) {
+    border-left-color: $color;
+    border-left-style: $type;
+    border-left-width: $weight;
+}
+
+@mixin border-right ($color, $type, $weight) {
+    border-right-color: $color;
+    border-right-style: $type;
+    border-right-width: $weight;
+}
+
+@mixin border-bottom ($color, $type, $weight) {
+    border-bottom-color: $color;
+    border-bottom-style: $type;
+    border-bottom-width: $weight;
+}
+
+@mixin border-top ($color, $type, $weight) {
+    border-top-color: $color;
+    border-top-style: $type;
+    border-top-width: $weight;
+}
+
+@mixin p-h ($left, $right) {
+    padding-left: $left;
+    padding-right: $right;
+}
+
+@mixin p-v ($top, $bottom) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+}
+
+@mixin gradient-red {
+    background: rgb(23, 0, 0);
+    background: linear-gradient(90deg, rgba(23, 0, 0, 1) 0%, rgba(204, 31, 31, 1) 38%, rgba(255, 142, 108, 1) 100%);
+}
+
+@mixin bg-gradient-lightgray {
+    background: rgb(23, 0, 0);
+    background: linear-gradient(90deg, rgba(250, 251, 252, 1) 0%, rgba(241, 242, 243, 1) 50%, rgba(250, 251, 252, 1) 100%);
+}
+
+@mixin clearfix() {
+
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        display: block;
+        clear: both;
+        height: 1px;
+        margin-top: -1px;
+        visibility: hidden;
+    }
+
+    & {
+        *zoom: 1;
+    }
+}

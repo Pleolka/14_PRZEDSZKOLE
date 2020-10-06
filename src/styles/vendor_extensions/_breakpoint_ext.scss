@@ -1,0 +1,310 @@
+﻿// IMPORT:
+
+@import "../vendors/breakpoint-sass/_breakpoint.scss";
+
+// ZMIENNE:
+
+$mobile: max-width 575px;
+$tablet: 576px 979px;
+$desktop: 980px 1319px;
+$wide: 1320px 1920px;
+$extrawide: 1921px;
+
+$all-mobile-tablet:980px;
+$all-mobile:576px;
+
+//FLEX CARDS:
+
+/*.flex1,
+.flex2,
+.flex3-2-1,
+.flex3-1,
+.flex4-2-1,
+.flex4-2-2,
+.flex4-4-2,
+.flex5,
+.flex5-3-2,
+.flex6,
+.flex8 {
+    display: grid;
+}*/
+
+.flex {
+    display: grid;
+}
+
+.flex2 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.flex2-2 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.flex3-2-1 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.flex3-1 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.flex4-2-1 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.flex4-2-2 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.flex4-4-2 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.flex5 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.flex5-3-2 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.flex6 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.flex8 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+/*
+.iksScssTest {
+    @include breakpoint($mobile) {
+        font-size: 16px;
+    }
+
+    @include breakpoint($desktop) {
+        font-size: 36px;
+    }
+}
+*/

@@ -1,0 +1,39 @@
+.card-wraper {
+    grid-column-gap: 2rem;
+    margin-top: 40vh;
+}
+
+.card-link {
+    @include drop-shadow;
+    background-color: white;
+    border-radius: 25px;
+    padding: 2rem 2rem;
+    margin: 2rem auto;
+
+    h1 {
+        text-align: center;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+}
+
+.card {
+    @include drop-shadow;
+    background-color: white;
+    border-radius: 25px;
+    margin: 2rem auto;
+    display: flex;
+    overflow: hidden;
+
+    h1,
+    h6,
+    p {
+        margin: 2rem;
+    }
+
+    .card-img-left {
+        min-width: 500px;
+    }
+}

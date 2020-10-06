@@ -1,0 +1,55 @@
+{
+  "_args": [
+    [
+      "plumber-sass@0.7.7",
+      "E:\\GRAFIKA\\12_IKS\\Szablon.Www.Core"
+    ]
+  ],
+  "_development": true,
+  "_from": "plumber-sass@0.7.7",
+  "_id": "plumber-sass@0.7.7",
+  "_inBundle": false,
+  "_integrity": "sha1-4rC8rotVcEaU4lM9Q2hrHBrUnAQ=",
+  "_location": "/plumber-sass",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "plumber-sass@0.7.7",
+    "name": "plumber-sass",
+    "escapedName": "plumber-sass",
+    "rawSpec": "0.7.7",
+    "saveSpec": null,
+    "fetchSpec": "0.7.7"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/plumber-sass/-/plumber-sass-0.7.7.tgz",
+  "_spec": "0.7.7",
+  "_where": "E:\\GRAFIKA\\12_IKS\\Szablon.Www.Core",
+  "author": {
+    "name": "Viktor Honti"
+  },
+  "bugs": {
+    "url": "https://github.com/jamonserrano/plumber-sass/issues"
+  },
+  "description": "Easy baseline grids with SASS",
+  "homepage": "https://jamonserrano.github.io/plumber-sass",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "baseline-grid",
+    "vertical-rhythm",
+    "typography"
+  ],
+  "license": "MIT",
+  "main": "_plumber.scss",
+  "name": "plumber-sass",
+  "repository": {
+    "type": "git",
+    "url": "git+https://jamonserrano@github.com/jamonserrano/plumber-sass.git"
+  },
+  "version": "0.7.7"
+}
