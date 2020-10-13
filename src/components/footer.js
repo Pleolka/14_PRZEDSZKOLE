@@ -1,24 +1,25 @@
 import React from 'react'
+import YAMLData from "../data/data.yaml"
 
 const Footer = () => {
 
     return (
         <div>
             <footer className="footer">
-                <div className="container footer-content">
+                <div className="container footer-content flex2">
                     <div>
                         <h4>Kontakt</h4>
-                        <p>PN-PT godz. 7:00 - 17:00</p>
-                        <p>Tel.: +48 33 842 33 20</p>
-                        <p>przedsznr8@bielsko.opoka.org.pl</p>
+                        <p>{YAMLData.hours}</p>
+                        <p>Tel.: {YAMLData.phone}</p>
+                        <p>{YAMLData.mail}</p>
                     </div>
                     <div className="footer-content-right">
                         <h4>Adres</h4>
-                        <h6>Przedszkole im. Jana Pwał II<br />
-                        Sióstr Serafitek w Oświęcimiu</h6>
+                        <h6>{YAMLData.title} {YAMLData.subtitle[0]}<br />
+                            {YAMLData.subtitle[1]}</h6>
 
-                        <p>ul. Dąbrowskiego 14<br />
-                        32-600 Oświęcim</p>
+                        <p>{YAMLData.address[0]}
+                            <br />{YAMLData.address[1]}</p>
                     </div>
                 </div>
 

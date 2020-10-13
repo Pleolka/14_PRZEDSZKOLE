@@ -59,6 +59,11 @@
     background: linear-gradient(90deg, rgba(23, 0, 0, 1) 0%, rgba(204, 31, 31, 1) 38%, rgba(255, 142, 108, 1) 100%);
 }
 
+@mixin gradient-darkblue {
+    background: $color-base;
+    background: linear-gradient(0deg, $color-base-dark 0%, $color-base 100%);
+}
+
 @mixin bg-gradient-lightgray {
     background: rgb(23, 0, 0);
     background: linear-gradient(90deg, rgba(250, 251, 252, 1) 0%, rgba(241, 242, 243, 1) 50%, rgba(250, 251, 252, 1) 100%);

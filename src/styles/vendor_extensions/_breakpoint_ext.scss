@@ -9,9 +9,12 @@ $tablet: 576px 979px;
 $desktop: 980px 1319px;
 $wide: 1320px 1920px;
 $extrawide: 1921px;
-
+//wszystko oprócz:
 $all-mobile-tablet:980px;
 $all-mobile:576px;
+
+//tylko:
+$mobileandtablet: max-width 979px;
 
 //FLEX CARDS:
 
@@ -113,7 +116,7 @@ $all-mobile:576px;
     }
 
     @include breakpoint($tablet) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
     @include breakpoint($desktop) {

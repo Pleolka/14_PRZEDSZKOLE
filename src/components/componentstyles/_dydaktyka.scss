@@ -1,0 +1,37 @@
+.dyd {
+    @include drop-shadow;
+    background-color: white;
+    border-radius: 25px;
+    margin: 2rem auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    hr {
+        border: 0;
+        height: 6px;
+        width: 100px;
+        background: $color-primary;
+        margin: 0 auto;
+    }
+
+    h2,
+    h6,
+    p {
+        text-align: center;
+    }
+
+}
+
+.dyd-list {
+    margin: 2rem .2rem;
+
+    p {
+        text-align: left;
+    }
+}
+
+.dyd-txt {
+    text-align: center;
+    margin: 2rem .2rem;
+}

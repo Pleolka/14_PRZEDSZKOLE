@@ -1,16 +1,25 @@
-.content-wraper {
+.layout-wraper {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: visible;
 }
 
-.bg-img {
-    flex-grow: 1;
-    position: absolute;
-    background-color: white;
-    min-width: 100%;
-    //height: auto;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: contain;
+.bg-top-img {
+    height: 40vh;
+    margin-bottom: -40vh;
+    z-index: -2;
+
+    @include breakpoint($mobileandtablet) {
+        height: 200px;
+        margin-bottom: -200px;
+    }
+}
+
+.content-wrapper {
+    margin-top: 28vh;
+
+    @include breakpoint($mobileandtablet) {
+        margin-top: 130px;
+    }
 }

@@ -1,0 +1,29 @@
+.personel-wrapper {
+    grid-column-gap: 2rem;
+}
+
+.personel-card {
+    @include drop-shadow;
+    background-color: white;
+    border-radius: 25px;
+    margin: 2rem auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    h6 {
+        margin-top: 1rem;
+    }
+
+    h6,
+    p {
+        text-align: center;
+    }
+
+    &-img {
+        flex-grow: 1;
+        width: 100%;
+        object-fit: contain;
+    }
+}

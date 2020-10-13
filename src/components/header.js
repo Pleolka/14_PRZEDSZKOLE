@@ -1,6 +1,10 @@
 import React from 'react'
+import YAMLData from "../data/data.yaml"
 import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 import { graphql, useStaticQuery } from 'gatsby'
+
+import Navbar from './navbar'
 
 const Header = () => {
 
@@ -21,17 +25,20 @@ const Header = () => {
         <header>
             <div className="container header-wrapper">
                 <div className="logo-header-wraper">
-                    <Img fixed={logo} className="logo-header"
-                        alt="logo" />
+                    <div className="logo-header">
+                        <Img fixed={logo}
+                            alt="logo" />
+                    </div>
                     <div>
-                        <h1>Przedszkole nr 8</h1>
-                        <h5>im. św. Jana Pawła II - Sióstr Serafitek w oświęcimiu</h5>
+                        <h1>{YAMLData.title}</h1>
+                        <h5>{YAMLData.subtitle[0]} - {YAMLData.subtitle[1]}</h5>
                     </div>
                 </div>
-                <div>
-                    <h6>Tel. +48 33 842 33 20<br />
-                    przedsznr8@bielsko.opoka.org.pl</h6>
-                </div>
+
+
+                <h6>Tel.: {YAMLData.phone}<br />
+                    {YAMLData.mail}</h6>
+
             </div>
         </header>
     )

@@ -66,7 +66,7 @@ h6 {
     font-weight: 500;
     margin: 0;
     line-height: 1;
-    color: $color-primary;
+    color: $color-base;
 }
 
 h1 {
@@ -140,6 +140,36 @@ table {
     border-collapse: collapse;
 }
 
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    border-color: $color-secondary;
+    border-width: 1px;
+    border-style: solid;
+}
+
+button:active {
+    //transform: scale(0.99);
+    border-color: $color-secondary;
+}
+
 .container {
     width: 100%;
     padding-right: 15px;
@@ -199,4 +229,8 @@ table {
     @include breakpoint($tablet) {
         display: none;
     }
+}
+
+.dis-none {
+    display: none;
 }

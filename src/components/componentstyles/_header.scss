@@ -1,3 +1,12 @@
+header {
+
+    overflow: visible;
+
+    @include breakpoint($mobileandtablet) {
+        display: none;
+    }
+}
+
 .header-wrapper {
     display: flex;
     flex-direction: row;
@@ -40,4 +49,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.header-bg-img {
+    background-color: white;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    z-index: -3;
+}
+
+.bg-img-wrapper {
+    position: relative;
 }

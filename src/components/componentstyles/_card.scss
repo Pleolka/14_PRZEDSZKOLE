@@ -1,30 +1,108 @@
-.card-wraper {
+.card-wrapper {
     grid-column-gap: 2rem;
-    margin-top: 40vh;
 }
 
+//CARD - grupy
 .card-link {
     @include drop-shadow;
     background-color: white;
     border-radius: 25px;
-    padding: 2rem 2rem;
-    margin: 2rem auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    h1 {
-        text-align: center;
+    h4 {
+        color: $color-secondary;
+        margin: 2rem 1rem 1rem 3.5rem;
+        word-break: break-word;
 
-        &:hover {
-            color: $color-secondary;
+        &::before {
+            display: block;
+            content: "";
+            background-color: $color-secondary;
+            width: 16px;
+            height: 30.56px;
+            position: absolute;
+            transform: translateX(-1.5rem);
+
         }
+    }
+
+    &:hover {
+        background: $color-secondary;
+        transition: all 1s;
+
+        h4 {
+            color: white;
+            transition: all 1s;
+
+            &::before {
+                background-color: white;
+                transition: all 1s;
+            }
+        }
+    }
+
+    @include breakpoint($mobileandtablet) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: stretch;
+        max-height: 200px;
+        margin-bottom: 2rem;
+
+    }
+
+    &-img {
+        padding: 2rem;
+
+
+        .gatsby-image-wrapper {
+            height: 100%;
+            width: auto;
+
+        }
+
+        @include breakpoint ($mobileandtablet) {
+            background-color: $color-secondary;
+            border-radius: 25px 0 0 25px;
+            min-width: 100px;
+            flex-grow: 1;
+            padding: 1rem;
+
+            img {
+                object-fit: contain !important;
+            }
+        }
+    }
+
+    .card-text {
+        flex-grow: 1;
     }
 }
 
+.card-name {
+    margin: auto 2rem;
+    flex-grow: 1;
+    opacity: 0.6;
+    line-height: 1.1;
+    padding-bottom: 2rem;
+
+    @include breakpoint ($mobileandtablet) {
+        flex-grow: 1;
+    }
+
+}
+
+//CARD - grupy
 .card {
     @include drop-shadow;
     background-color: white;
     border-radius: 25px;
     margin: 2rem auto;
     display: flex;
+    flex-direction: row;
     overflow: hidden;
 
     h1,
@@ -33,7 +111,39 @@
         margin: 2rem;
     }
 
-    .card-img-left {
-        min-width: 500px;
+    @include breakpoint ($mobileandtablet) {
+        flex-direction: column;
+    }
+}
+
+.card-img {
+    width: 100%;
+    object-fit: contain;
+    height: auto;
+    position: relative;
+}
+
+.card-column {
+    @include drop-shadow;
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    h1,
+    h6,
+    p {
+        margin: 2rem;
+    }
+
+    ul {
+        margin: 0 2rem 2rem 2rem;
+    }
+
+    @include breakpoint ($mobileandtablet) {
+        flex-direction: column;
     }
 }

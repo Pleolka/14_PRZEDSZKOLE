@@ -3,6 +3,10 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 
 module.exports = {
   siteMetadata: {
@@ -42,6 +46,13 @@ module.exports = {
       },
     },
 
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`,
+      },
+    },
 
     /*GATSBY IMAGE 
     wymagana wcześniej instalacja sharp i source system
@@ -91,6 +102,26 @@ module.exports = {
       },
     },
 
+    /*YAML
+    npm install gatsby-transformer-yaml
+    */
+    `gatsby-transformer-yaml`,
+
+    /* CONTENTFUL 
+    npm install gatsby-source-contentful
+    */
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: 'k0uqaqrueivo',
+        accessToken: 'urDyW6NsltENhmZj-DBls58TzNtNoOoliaalJu83vTs',
+      }
+    },
+
+    /*CONTENTFUL RICH TEXT 
+    npm install @contentful/rich-text-react-renderer
+    */
+    '@contentful/gatsby-transformer-contentful-richtext',
 
 
   ],

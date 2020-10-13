@@ -1,21 +1,17 @@
 .footer {
-    background: rgb(53, 72, 106);
-    background: linear-gradient(180deg, rgba(53, 72, 106, 1) 16%, rgba(16, 32, 60, 1) 100%);
+    @include gradient-darkblue;
     padding-top: 6rem;
     padding-bottom: 2rem;
 }
 
 .footer-image {
-    margin: 0px auto -130px auto;
+    margin: 5rem auto -130px auto;
     background-color: transparent;
     width: 50vw;
     max-width: 900px;
 }
 
 .footer-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     padding-bottom: 2rem;
 
     h4,
@@ -30,8 +26,20 @@
         margin-bottom: 1rem;
     }
 
+    @include breakpoint($mobileandtablet) {
+        text-align: center;
+
+        h4 {
+            margin-top: 2rem;
+        }
+    }
+
     &-right {
         text-align: right;
+
+        @include breakpoint($mobileandtablet) {
+            text-align: center;
+        }
     }
 
     &-adds {

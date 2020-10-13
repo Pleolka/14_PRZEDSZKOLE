@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
-
+import Img from 'gatsby-image'
 
 import Footer from './footer'
 import Navbar from './navbar'
@@ -11,14 +10,7 @@ const Layout = (props) => {
 
   const data = useStaticQuery(graphql`
     query {
-        bgIndex: file(relativePath: { eq: "bg-big.png" }) {
-          childImageSharp {
-            fluid(quality: 100, maxWidth: 3020) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
-        bgOther: file(relativePath: { eq: "bg-small.png" }) {
+        bg: file(relativePath: { eq: "bg-medium.png" }) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 3020) {
               ...GatsbyImageSharpFluid_noBase64
@@ -28,23 +20,24 @@ const Layout = (props) => {
     }
     `);
 
-  const bgOther = data.bgOther.childImageSharp.fluid
-  const bgIndex = data.bgIndex.childImageSharp.fluid
+  const bg = data.bg.childImageSharp.fluid
 
   return (
-    <div className="content-wraper">
-      <BackgroundImage
+    <div className="layout-wraper">
+      <Img
         Tag="section"
-        className="bg-img"
-        fluid={props.isIndexPage
-          ? bgIndex : bgOther}>
+        className="bg-top-img"
+        fluid={bg} />
 
-        <Header />
-        <Navbar />
+      <Header className />
+      <Navbar />
+
+      <div className="content-wrapper">
 
         {props.children}
 
-      </BackgroundImage>
+      </div>
+
 
       <Footer />
     </div>
@@ -52,5 +45,3 @@ const Layout = (props) => {
 }
 
 export default Layout
-
-//<Img className="bgImg" fluid={data.background.childImageSharp.fluid} />

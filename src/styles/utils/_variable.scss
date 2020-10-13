@@ -19,9 +19,9 @@ $color-primary: #0F3578;
 $color-secondary: #41C8CA;
 $color-font: rgba(0, 0, 0, 0.8);
 
-$color-base: rgb(255, 27, 81);
+$color-base: rgb(20, 89, 131);
 $color-base-light: rgb(255, 155, 179);
-$color-base-dark: rgb(119, 16, 40);
+$color-base-dark: rgb(4, 18, 49);
 
 // Fonts
 $font-main: 'Open Sans',
@@ -33,7 +33,7 @@ sans-serif;
 $font-special: 'Francois One',
 sans-serif;
 
-$font-size: calc(#{0.2vw} + 12px);
+$font-size: calc(#{0.2vw} + 15px);
 $font-size-headers: calc(#{0.6vw} + 8px);
 
 // Global z-index
