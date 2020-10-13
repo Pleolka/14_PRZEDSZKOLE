@@ -1,11 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faBars,
-    faTimes,
-} from '@fortawesome/free-solid-svg-icons'
-
 
 class LeftMenu extends React.Component {
     state = { clicked: false }
