@@ -1,0 +1,65 @@
+.card-big {
+    @include drop-shadow;
+    background-color: white;
+    border-radius: 25px;
+    margin: 2rem auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    h6 {
+        color: $color-font;
+        opacity: .6;
+        text-transform: uppercase;
+        font-family: $font-main;
+        font-size: $font-size;
+    }
+    
+
+    @include breakpoint ($mobileandtablet) {
+        flex-direction: column;
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+
+
+        div {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+
+            @include breakpoint($mobileandtablet) {
+                flex-direction: column;
+                h6 {
+                    margin: 1rem 0 0 0;
+                }
+            }
+        }
+    }
+
+    &-img {
+        width: 100%;
+        height: 100%;
+        margin-top: 2rem;
+       display: flex;
+       flex-direction: row;
+       justify-content: stretch;
+       align-content: stretch;
+
+       span{
+        margin-top: 2rem;
+        flex-grow: 1;
+    }
+
+       @include breakpoint($mobileandtablet) {
+           flex-direction: column;
+           span{
+               margin-top: 2rem;
+           }
+       }
+    }
+}

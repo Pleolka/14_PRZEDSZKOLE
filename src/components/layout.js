@@ -17,19 +17,32 @@ const Layout = (props) => {
             }
           }
         }
+        bgBig: file(relativePath: { eq: "bg-big.png" }) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 3020) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
     }
     `);
 
   const bg = data.bg.childImageSharp.fluid
+  const bgBig = data.bgBig.childImageSharp.fluid
+
+  console.log("dupa")
+  console.log(props.isIndexPage)
+  console.log("dupa")
 
   return (
+
     <div className="layout-wraper">
       <Img
         Tag="section"
-        className="bg-top-img"
-        fluid={bg} />
+        className={props.isIndexPage === true ? "bg-top-index-img" : "bg-top-img"}
+        fluid={props.isIndexPage === true ? bgBig : bg} />
 
-      <Header className />
+      <Header className={props.isIndexPage === true ? "h-index" : ""} />
       <Navbar />
 
       <div className="content-wrapper">
@@ -45,3 +58,6 @@ const Layout = (props) => {
 }
 
 export default Layout
+
+//{isIndexPage = true ? bg : bg} 
+//{props.isIndexPage === true ? "h-index" : "h-index"}

@@ -30,12 +30,14 @@
     "gatsby-plugin-sharp": "^2.6.38",
     "gatsby-source-contentful": "^2.3.50",
     "gatsby-source-filesystem": "^2.3.32",
+    "gatsby-transformer-remark": "^2.8.39",
     "gatsby-transformer-sharp": "^2.5.16",
     "gatsby-transformer-yaml": "^2.4.14",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "remark-grid-tables": "^2.1.1"
   },
   "devDependencies": {
     "prettier": "2.1.2"

@@ -1,12 +1,9 @@
 import React from 'react'
 import YAMLData from "../data/data.yaml"
 import Img from 'gatsby-image'
-import BackgroundImage from 'gatsby-background-image'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import Navbar from './navbar'
-
-const Header = () => {
+const Header = (props) => {
 
     const data = useStaticQuery(graphql`
     query {
@@ -22,7 +19,7 @@ const Header = () => {
     const logo = data.logo.childImageSharp.fixed
 
     return (
-        <header>
+        <header className={props.className}>
             <div className="container header-wrapper">
                 <div className="logo-header-wraper">
                     <div className="logo-header">

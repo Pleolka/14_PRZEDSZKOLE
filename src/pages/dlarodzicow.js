@@ -1,91 +1,79 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
-import Dydaktyka from '../components/dydaktyka'
-import LeftMenu from '../components/leftMenu'
-import LeftMenuContent from '../components/leftMenuContent'
+import Tab from '../components/tab/tab'
 import SEO from '../components/SEO'
 
 const DlaRodzicow = () => {
 
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
-        allContentfulDlaRodzicow {
-            nodes {
-              tytul
-              childContentfulDlaRodzicowSimpleTekstTextNode {
-                simpleTekst
+        kids: file(relativePath: { eq: "kids01.png" }) {
+            childImageSharp {
+              fluid(quality: 100, maxWidth: 900) {
+                ...GatsbyImageSharpFluid_noBase64
               }
-              dokumenty {
-                title
-                file {
-                  url
-                }
-              }
-              data(formatString: "DD MMMM yyyy", locale: "pl-PL")
-              
             }
           }
 
-      allContentfulMiesiecznyWykazDydaktykiAniolki (
-        sort: {
-        fields:publishDate,
-        order:DESC
+          allContentfulDlaRodzicow(sort: {fields: idNumber, order: ASC}) {
+            nodes {
+              data
+              tytul
+              idNumber
+              childContentfulDlaRodzicowOpisRichTextNode {
+                json
+                childContentfulRichText {
+                  html
+                }
+              }
+            }
+          }
       }
-      ) {
-        nodes {
-          childContentfulMiesiecznyWykazDydaktykiAniolkiPiosenkaRichTextNode {
-            json
-          }
-          childContentfulMiesiecznyWykazDydaktykiAniolkiTematykaKompleksowaRichTextNode {
-            json
-          }
-          childContentfulMiesiecznyWykazDydaktykiAniolkiWierszRichTextNode {
-            json
-          }
-          childContentfulMiesiecznyWykazDydaktykiAniolkiZadaniaWychowawczoDydaktyczneRichTextNode {
-            json
-          }
-          title
-          publishDate (formatString: "MMMM YYYY" locale: "pl")
-        }
-      }
-      }
+      
     `)
 
-    return (
-        <Layout>
-            <SEO title="Grupa aniołków" />
+  const kids = data.kids.childImageSharp.fluid
+  const content = data.allContentfulDlaRodzicow.nodes
 
-            <div className="container">
+  return (
+    <Layout>
+      <SEO title="Grupa aniołków" />
 
-                <h1 className="group-title">Dla Rodziców</h1>
+      <div className="container dlarodzicow">
 
-                <div className="dlarodzicow-wrapper">
-                    <LeftMenu />
-                    <LeftMenuContent />
-                </div>
-                {data.allContentfulDlaRodzicow.nodes.map((node) => {
-                    return (
-                        <>
-                            <Dydaktyka
-                                month={node.tytul}
-                                date={node.data}
-                                wiersz={node.dokumenty.map((dokument) => dokument.file.url)}
-                                piosenka={node.dokumenty.map((dokument) => dokument.file.url)}
-                                tematyka={node.dokumenty.map((dokument) => dokument.file.url)}
-                                zadania={node.dokumenty.map((dokument) => dokument.file.url)}
-                            />
-                            <a href={node.dokumenty.map((dokument) => dokument.file.url)}>link</a>
-                        </>
-                    )
-                })}
+        <h1 className="first-section">Dla Rodziców</h1>
 
+        <Tab data={content} />
+
+        {content.map((node) => {
+
+          return (
+
+            <div className="mobile-only">
+              <h5>{node.tytul}</h5>
+              <div className={node.tytul === "Ramowy rozkład dnia" ? "flex2-2 flexP" : ""}
+                dangerouslySetInnerHTML={{ __html: node.childContentfulDlaRodzicowOpisRichTextNode.childContentfulRichText.html }}></div>
             </div>
-        </Layout>
-    )
+          )
+        })
+        }
+      </div>
+
+      <Img fluid={kids}
+        className="footer-image"
+        objectFit="cover"
+        alt="kids playing the music" />
+    </Layout>
+  )
 }
 
 export default DlaRodzicow
+
+//{documentToReactComponents(node.childContentfulDlaRodzicowOpisRichTextNode.json)}
+
+// dangerouslySetInnerHTML = {{
+//     __html: documentToReactComponents(node.childContentfulDlaRodzicowOpisRichTextNode.childContentfulRichText.html),
+// }}

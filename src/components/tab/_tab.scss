@@ -1,0 +1,61 @@
+.tab{
+    margin-top: 2rem;  
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+
+
+    @include breakpoint ($mobile) {
+        display: none;
+    }
+  }
+  
+.tab-menu{
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+  }
+  
+.tab-menu-item{
+    background-color:white;
+    color: rgb(155, 155, 155);
+    cursor: pointer;
+    margin: 0px;
+    min-height: 80px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  
+    border-right-color: lightgrey;
+    border-right-width: 1px;
+    border-right-style: solid;
+  
+
+    &:hover {
+        color: $color-font;
+    border-right-color: $color-base;
+    border-right-width: 7px;
+    border-right-style: solid;
+    transition: all .3s;
+    }
+  }
+  
+.tab-menu-item--active {
+    color: $color-font;
+    border-right-color: $color-base;
+    border-right-width: 7px;
+    border-right-style: solid;
+    transition: all .3s;
+  }
+  
+.tab-content{
+    padding: 5px  5px 5px 3rem;
+    margin: 0;
+    width: 100%;
+  }

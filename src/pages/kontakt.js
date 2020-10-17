@@ -10,7 +10,7 @@ const Kontakt = () => {
 
     const data = useStaticQuery(graphql`
     query {
-        kids: file(relativePath: { eq: "kids1.png" }) {
+        kids: file(relativePath: { eq: "kids02.png" }) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 900) {
               ...GatsbyImageSharpFluid_noBase64

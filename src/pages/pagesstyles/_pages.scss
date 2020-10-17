@@ -1,5 +1,6 @@
 .first-section {
     margin: 0 auto 4rem auto !important;
+    text-align: center;
 }
 
 //***************GRUPY
@@ -63,5 +64,42 @@
     h1,
     p {
         color: white;
+    }
+}
+
+//***************DLA RODZICÓW
+.dlarodzicow {
+    h5 {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    ol {
+        padding-left: 0;
+
+        p {
+            margin-left: 1rem;
+            margin-top: 1rem;
+        }
+    }
+
+    h6 {
+        margin: 3rem 0 2rem 0;
+    }
+
+    p {
+        margin-top: 2rem;
+    }
+
+}
+
+.flexP {
+    display: grid;
+    grid-template-columns: 140px 2fr;
+
+    p{
+        &:nth-child(odd) {
+            font-weight: 700;
+        }
     }
 }

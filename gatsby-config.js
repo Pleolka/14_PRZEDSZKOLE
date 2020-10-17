@@ -3,9 +3,12 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+console.log(`Using environment config: '${activeEnv}'`)
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+  path: `.env.${activeEnv}`,
+})
 
 
 module.exports = {
@@ -122,6 +125,28 @@ module.exports = {
     npm install @contentful/rich-text-react-renderer
     */
     '@contentful/gatsby-transformer-contentful-richtext',
+
+    /* REMARK 
+    npm install gatsby-transformer-remark
+    npm install remark-grid-tables
+    */
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [
+
+        ],
+      },
+    }
 
 
   ],

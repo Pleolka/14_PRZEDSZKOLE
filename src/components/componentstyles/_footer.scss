@@ -2,6 +2,45 @@
     @include gradient-darkblue;
     padding-top: 6rem;
     padding-bottom: 2rem;
+
+    p {
+         &:last-child {
+             margin-top: 1rem;
+         }
+    }
+}
+
+.footer-link {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        text-align: right;
+        &:nth-child(4),
+        &:nth-child(8) {
+            margin-top: 1rem;
+        }
+        color: white;
+
+        &:hover {
+            color: $color-secondary;
+            transition: all .3s;
+        }
+        
+        @include breakpoint($mobileandtablet) {
+            text-align: center;
+        }
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        
+        @include breakpoint($mobileandtablet) {
+            display: none;
+        }
+    }
 }
 
 .footer-image {
@@ -9,6 +48,11 @@
     background-color: transparent;
     width: 50vw;
     max-width: 900px;
+
+    @include breakpoint($mobileandtablet) {
+        margin: 5rem auto -60px auto;
+        width: 70vw;
+    }
 }
 
 .footer-content {
@@ -28,14 +72,13 @@
 
     @include breakpoint($mobileandtablet) {
         text-align: center;
-
-        h4 {
-            margin-top: 2rem;
-        }
     }
 
     &-right {
-        text-align: right;
+        
+            text-align: right;
+        
+        
 
         @include breakpoint($mobileandtablet) {
             text-align: center;

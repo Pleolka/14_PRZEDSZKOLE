@@ -1,22 +1,35 @@
 import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
+import CardBig from '../components/cardBig'
 
 const Aktualnosci = () => {
 
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
-        kids1: file(relativePath: { eq: "kids1.png" }) {
-          childImageSharp {
-            fluid(quality: 100, maxWidth: 900) {
-              ...GatsbyImageSharpFluid_noBase64
+      
+      allContentfulAktualnosci(sort: {fields: data, order: DESC}, filter: {data: {lt: "31 stycznia 2019"}}) {
+        nodes {
+          data(formatString: "DD MMMM YYYY", locale: "pl")
+          tytul
+          childContentfulAktualnosciTekstRichTextNode {
+            json
+          }
+          foto {
+            title
+            fluid(maxWidth: 900, quality: 100) {
+              ...GatsbyContentfulFluid
+              sizes
             }
           }
         }
-        kids2: file(relativePath: { eq: "bg-small.png" }) {
+      }
+      
+        kids: file(relativePath: { eq: "kids1.png" }) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 900) {
               ...GatsbyImageSharpFluid_noBase64
@@ -26,23 +39,37 @@ const Aktualnosci = () => {
     }
     `);
 
-    const kids1 = data.kids1.childImageSharp.fluid
-    const kids2 = data.kids2.childImageSharp.fluid
+  const kids = data.kids.childImageSharp.fluid
+  const cardData = data.allContentfulAktualnosci.nodes
 
-    return (
-        <Layout>
-            <SEO title="Home" />
-            <div className="container">
-                <h1>Aktualnosci</h1>
-                <h1>Aktualnosci</h1>
-                <h1>Aktualnosci</h1>
-                <Img fluid={kids1}
-                    className="footer-image"
-                    objectFit="cover"
-                    alt="kids" />
-            </div>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <div className="container">
+        <h1 className="first-section">
+          Aktualności
+                  </h1>
+
+        {cardData.map((node) => {
+
+          return (
+
+            <CardBig
+              cardFoto={node.foto}
+              cardTitle={node.tytul}
+              cardDate={node.data}
+              cardTekst={documentToReactComponents(node.childContentfulAktualnosciTekstRichTextNode.json)} />
+          )
+
+        })}
+      </div>
+
+      <Img fluid={kids}
+        className="footer-image"
+        objectFit="cover"
+        alt="kids playing the music" />
+    </Layout>
+  )
 }
 
 export default Aktualnosci

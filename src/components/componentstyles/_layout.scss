@@ -5,6 +5,10 @@
     overflow: visible;
 }
 
+.h-index {
+    margin-top: 16px;
+}
+
 .bg-top-img {
     height: 40vh;
     margin-bottom: -40vh;
@@ -21,5 +25,27 @@
 
     @include breakpoint($mobileandtablet) {
         margin-top: 130px;
+    }
+
+    @include breakpoint($wide) {
+        margin-top: 38vh;
+    }
+    @include breakpoint($extrawide) {
+        margin-top: 58vh;
+    }
+}
+
+.bg-top-index-img {
+    margin-bottom: -77.6666vw;
+    z-index: -2;
+
+    @include breakpoint($mobileandtablet) {
+        height: 200px;
+        margin-bottom: -200px;
+
+        img {
+            object-position: 50% 10% !important;
+            transform: scale(1.5);
+        }
     }
 }
