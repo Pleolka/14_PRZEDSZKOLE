@@ -30,10 +30,6 @@ const Layout = (props) => {
   const bg = data.bg.childImageSharp.fluid
   const bgBig = data.bgBig.childImageSharp.fluid
 
-  console.log("dupa")
-  console.log(props.isIndexPage)
-  console.log("dupa")
-
   return (
 
     <div className="layout-wraper">

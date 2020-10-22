@@ -21,17 +21,10 @@
 }
 
 .content-wrapper {
-    margin-top: 28vh;
+    margin-top: 26vh;
 
     @include breakpoint($mobileandtablet) {
         margin-top: 130px;
-    }
-
-    @include breakpoint($wide) {
-        margin-top: 38vh;
-    }
-    @include breakpoint($extrawide) {
-        margin-top: 58vh;
     }
 }
 

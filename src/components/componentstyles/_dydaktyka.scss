@@ -1,11 +1,18 @@
+.dyd-main {
+    display: flex;
+    flex-direction: row;
+}
+
 .dyd {
     @include drop-shadow;
     background-color: white;
     border-radius: 25px;
     margin: 2rem auto;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+
+    @include breakpoint($all-mobile) {
+        display: none;
+    }
+    
 
     hr {
         border: 0;
@@ -23,9 +30,47 @@
 
 }
 
+.dyd-header {
+    padding: 2rem;
+    background-color: $color-base;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    p,
+    h2,
+    h4, 
+    li {
+        color: white;
+        text-align: left;
+    }
+
+    &-opis {
+        margin-top: 1.2rem;
+    }
+
+    &-tematyka {
+        p {
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+    }
+
+    &-title {
+        max-width: 400px;
+    }
+}
+
+.dyd-content {
+    padding: 2rem;
+}
+
 .dyd-list {
     margin: 2rem .2rem;
-
+h5 {
+    text-align: center;
+}
     p {
         text-align: left;
     }

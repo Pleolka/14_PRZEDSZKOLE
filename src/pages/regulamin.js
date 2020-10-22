@@ -9,60 +9,42 @@ import SEO from '../components/SEO'
 
 const Regulamin = () => {
 
-    const data = useStaticQuery(graphql`
-    query {
-      allContentfulMiesiecznyWykazDydaktykiAniolki (
-        sort: {
-        fields:publishDate,
-        order:DESC
-      }
-      ) {
-        nodes {
-          childContentfulMiesiecznyWykazDydaktykiAniolkiPiosenkaRichTextNode {
-            json
-          }
-          childContentfulMiesiecznyWykazDydaktykiAniolkiTematykaKompleksowaRichTextNode {
-            json
-          }
-          childContentfulMiesiecznyWykazDydaktykiAniolkiWierszRichTextNode {
-            json
-          }
-          childContentfulMiesiecznyWykazDydaktykiAniolkiZadaniaWychowawczoDydaktyczneRichTextNode {
-            json
-          }
+  const data = useStaticQuery(graphql`
+  query {
+    allContentfulInformacjeDodatkoweOPrzedszkolu {
+      edges {
+        node {
+          godzinyOtwarcia
+          mail
+          telefon
           title
-          publishDate (formatString: "MMMM YYYY" locale: "pl")
+          adres {
+            adres
+          }
+          subtitle {
+            subtitle
+          }
+          regulamin {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
       }
-      }
-    `)
+    }
+  }`)
 
-    return (
-        <Layout>
-            <SEO title="Grupa aniołków" />
+  const regulaminHTML = data.allContentfulInformacjeDodatkoweOPrzedszkolu.edges[0].node.regulamin.childMarkdownRemark.html
 
-            <div className="container">
+  return (
+    <Layout>
+      <SEO title="Grupa aniołków" />
 
-                <h1 className="group-title">Regulamin przedszkola</h1>
+      <div className="container regulamin" dangerouslySetInnerHTML={{ __html: regulaminHTML }}>
+      </div>
 
-                {data.allContentfulMiesiecznyWykazDydaktykiAniolki.nodes.map((node) => {
-                    return (
-
-                        <Dydaktyka
-                            month={node.title}
-                            date={node.publishDate}
-                            wiersz={documentToReactComponents(node.childContentfulMiesiecznyWykazDydaktykiAniolkiWierszRichTextNode.json)}
-                            piosenka={documentToReactComponents(node.childContentfulMiesiecznyWykazDydaktykiAniolkiPiosenkaRichTextNode.json)}
-                            tematyka={documentToReactComponents(node.childContentfulMiesiecznyWykazDydaktykiAniolkiTematykaKompleksowaRichTextNode.json)}
-                            zadania={documentToReactComponents(node.childContentfulMiesiecznyWykazDydaktykiAniolkiZadaniaWychowawczoDydaktyczneRichTextNode.json)}
-                        />
-
-                    )
-                })}
-
-            </div>
-        </Layout>
-    )
+    </Layout>
+  )
 }
 
 export default Regulamin

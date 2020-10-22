@@ -44,6 +44,7 @@ const Grupa1 = () => {
       <div className="container">
 
         <h1 className="group-title">Grupa Aniołków</h1>
+        <p>Opis grupy</p>
 
         {data.allContentfulMiesiecznyWykazDydaktykiAniolki.nodes.map((node) => {
           return (

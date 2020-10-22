@@ -74,23 +74,23 @@ h1 {
 }
 
 h2 {
-    font-size: calc(#{$font-size} * 2.5);
+    font-size: calc(#{$font-size-small} * 2.5);
 }
 
 h3 {
-    font-size: calc(#{$font-size} * 2);
+    font-size: calc(#{$font-size-small} * 2);
 }
 
 h4 {
-    font-size: calc(#{$font-size} * 1.8);
+    font-size: calc(#{$font-size-small} * 1.8);
 }
 
 h5 {
-    font-size: calc(#{$font-size} * 1.5);
+    font-size: calc(#{$font-size-small} * 1.5);
 }
 
 h6 {
-    font-size: calc(#{$font-size} * 1.2);
+    font-size: calc(#{$font-size-small} * 1.2);
 }
 
 ul {
