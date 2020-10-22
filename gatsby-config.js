@@ -91,7 +91,7 @@ module.exports = {
         fonts: [
           {
             family: `Francois One`,
-            subsets: [`latin`]
+            subsets: [`latin-ext`]
           },
           {
             family: `Roboto Mono`,
@@ -99,7 +99,7 @@ module.exports = {
           },
           {
             family: `Roboto`,
-            subsets: [`latin`]
+            subsets: [`latin-ext`]
           },
         ],
       },
