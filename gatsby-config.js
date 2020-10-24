@@ -10,7 +10,6 @@ require("dotenv").config({
   path: `.env.${activeEnv}`,
 })
 
-
 module.exports = {
   siteMetadata: {
     title: 'Przedszkole nr 8 im. Jana Pawła II',

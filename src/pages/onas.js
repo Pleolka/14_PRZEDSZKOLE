@@ -89,7 +89,7 @@ const Onas = () => {
 
             {list.map(wykaz => (
               <div className="card-column">
-                <h6>{wykaz.name}</h6>
+                <h5>{wykaz.name}</h5>
                 <ul>
                   {wykaz.podpunkty.map(podpunkt => (
                     <li>{podpunkt}</li>

@@ -1,10 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-
 
 import Layout from '../components/layout'
-import Dydaktyka from '../components/dydaktyka'
 import SEO from '../components/SEO'
 
 const Regulamin = () => {

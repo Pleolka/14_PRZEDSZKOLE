@@ -29,16 +29,16 @@ const Kontakt = () => {
                 <h1>Kontakt</h1>
                 <div className="flex2 kontakt-wraper">
                     <div>
-                        <h6>{YAMLData.title}
+                        <h5>{YAMLData.title}
                             <br />{YAMLData.subtitle[0]}
-                            <br />{YAMLData.subtitle[1]}</h6>
+                            <br />{YAMLData.subtitle[1]}</h5>
                         <p><br />{YAMLData.address[0]}
                             <br />{YAMLData.address[1]}</p>
                         <p><b>{YAMLData.phone}</b></p>
                         <p><b>{YAMLData.mail}</b></p>
                     </div>
                     <div>
-                        <h6>Dyrektor</h6>
+                        <h5>Dyrektor</h5>
                         <p>s. Ewa OCZAROWSKA</p>
                         <p><b>+48 512 013 482</b></p>
                     </div>
@@ -48,15 +48,15 @@ const Kontakt = () => {
                 <h4>Współpraca</h4>
                 <div className="flex2 kontakt-wraper">
                     <div>
-                        <h6>Poradnia
-                            <br />psychologiczno-pedagogiczna</h6>
+                        <h5>Poradnia
+                            <br />psychologiczno-pedagogiczna</h5>
                         <p>ul. Bema 4
                         <br />32-600 Oświęcim</p>
                         <p><b>+48 33 843 11 62</b></p>
                     </div>
                     <div>
-                        <h6>Poradnia
-                            <br />logopedyczna</h6>
+                        <h5>Poradnia
+                            <br />logopedyczna</h5>
                         <p>ul. Bema 4
                         <br />32-600 Oświęcim</p>
                         <p>Logopeda: Renata WITKOWSKA</p>

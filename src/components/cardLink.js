@@ -10,6 +10,8 @@ const CardLink = (props) => {
             <div className="card-text">
                 <h4>{props.cardTitle}</h4>
                 <div className="card-name">
+                    <div dangerouslySetInnerHTML={{ __html: props.cardText }}>
+                    </div>
                     <p>{props.cardName1}</p>
                     <p>{props.cardName2}</p>
                 </div>

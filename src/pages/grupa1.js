@@ -1,37 +1,58 @@
 import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-
 
 import Layout from '../components/layout'
 import Dydaktyka from '../components/dydaktyka'
 import SEO from '../components/SEO'
+import Tab from '../components/tabDydaktyka/tab'
 
 const Grupa1 = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allContentfulMiesiecznyWykazDydaktykiAniolki (
-        sort: {
-        fields:publishDate,
-        order:DESC
-      }
-      ) {
+      allContentfulGrupy(filter: {nrGrupy: {eq: 1}}) {
         nodes {
-          childContentfulMiesiecznyWykazDydaktykiAniolkiPiosenkaRichTextNode {
-            json
+          childContentfulGrupyOpisGrupyTextNode {
+            childMarkdownRemark {
+              html
+            }
           }
-          childContentfulMiesiecznyWykazDydaktykiAniolkiTematykaKompleksowaRichTextNode {
-            json
+        }
+      }
+
+      allContentfulDydaktyka(
+        filter: {grupa: {eq: "Grupa Aniołków"}}, 
+        sort: {fields: date, order: DESC},
+        limit: 12) {
+        nodes {
+          grupa
+          date(formatString: "YYYY", locale: "PL")
+          miesiac
+          opis {
+            childMarkdownRemark {
+              html
+            }
           }
-          childContentfulMiesiecznyWykazDydaktykiAniolkiWierszRichTextNode {
-            json
+          piosenka {
+            childMarkdownRemark {
+              html
+            }
           }
-          childContentfulMiesiecznyWykazDydaktykiAniolkiZadaniaWychowawczoDydaktyczneRichTextNode {
-            json
+          tematyka {
+            childMarkdownRemark {
+              html
+            }
           }
-          title
-          publishDate (formatString: "MMMM YYYY" locale: "pl")
+          wiersz {
+            childMarkdownRemark {
+              html
+            }
+          }
+          dydaktyka {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
       }
       }
@@ -40,24 +61,36 @@ const Grupa1 = () => {
   return (
     <Layout>
       <SEO title="Grupa aniołków" />
-
       <div className="container">
 
         <h1 className="group-title">Grupa Aniołków</h1>
-        <p>Opis grupy</p>
+        <div dangerouslySetInnerHTML={{ __html: data.allContentfulGrupy.nodes[0].childContentfulGrupyOpisGrupyTextNode.childMarkdownRemark.html }}>
+        </div>
 
-        {data.allContentfulMiesiecznyWykazDydaktykiAniolki.nodes.map((node) => {
+        {data.allContentfulDydaktyka.nodes.map((node) => {
           return (
-
-            <Dydaktyka
-              month={node.title}
-              date={node.publishDate}
-              wiersz={documentToReactComponents(node.childContentfulMiesiecznyWykazDydaktykiAniolkiWierszRichTextNode.json)}
-              piosenka={documentToReactComponents(node.childContentfulMiesiecznyWykazDydaktykiAniolkiPiosenkaRichTextNode.json)}
-              tematyka={documentToReactComponents(node.childContentfulMiesiecznyWykazDydaktykiAniolkiTematykaKompleksowaRichTextNode.json)}
-              zadania={documentToReactComponents(node.childContentfulMiesiecznyWykazDydaktykiAniolkiZadaniaWychowawczoDydaktyczneRichTextNode.json)}
-            />
-
+            <>
+              <Tab
+                miesiac={node.miesiac}
+                date={node.date}
+                group={node.grupa}
+                opis={node.opis.childMarkdownRemark.html}
+                wiersz={node.wiersz.childMarkdownRemark.html}
+                piosenka={node.piosenka.childMarkdownRemark.html}
+                tematyka={node.tematyka.childMarkdownRemark.html}
+                dydaktyka={node.dydaktyka.childMarkdownRemark.html}
+              />
+              <Dydaktyka
+                month={node.miesiac}
+                date={node.date}
+                group={node.grupa}
+                opis={node.opis.childMarkdownRemark.html}
+                wiersz={node.wiersz.childMarkdownRemark.html}
+                piosenka={node.piosenka.childMarkdownRemark.html}
+                tematyka={node.tematyka.childMarkdownRemark.html}
+                dydaktyka={node.dydaktyka.childMarkdownRemark.html}
+              />
+            </>
           )
         })}
 

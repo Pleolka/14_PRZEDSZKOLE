@@ -1,29 +1,15 @@
-.dyd-main {
-    display: flex;
-    flex-direction: row;
-}
-
 .dyd {
     @include drop-shadow;
     background-color: white;
     border-radius: 25px;
     margin: 2rem auto;
+    padding: 2rem;
 
     @include breakpoint($all-mobile) {
         display: none;
     }
-    
-
-    hr {
-        border: 0;
-        height: 6px;
-        width: 100px;
-        background: $color-primary;
-        margin: 0 auto;
-    }
 
     h2,
-    h6,
     p {
         text-align: center;
     }
@@ -31,16 +17,16 @@
 }
 
 .dyd-header {
+    margin: -2rem -2rem 0 -2rem;
     padding: 2rem;
     background-color: $color-base;
-    border-radius: 25px;
+    border-radius: 25px 25px 0 0;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 
     p,
     h2,
-    h4, 
     li {
         color: white;
         text-align: left;
@@ -51,14 +37,17 @@
     }
 
     &-tematyka {
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+
         p {
             text-transform: uppercase;
             font-weight: 900;
         }
-    }
 
-    &-title {
-        max-width: 400px;
+        li {
+            font-weight: 600;
+        }
     }
 }
 
@@ -68,9 +57,7 @@
 
 .dyd-list {
     margin: 2rem .2rem;
-h5 {
-    text-align: center;
-}
+
     p {
         text-align: left;
     }
@@ -79,4 +66,5 @@ h5 {
 .dyd-txt {
     text-align: center;
     margin: 2rem .2rem;
+    white-space: pre-wrap;
 }

@@ -19,7 +19,7 @@
         text-align: center;
     }
 
-    h6 {
+    h5 {
         margin: 4rem 0 1rem 0;
     }
 
@@ -91,6 +91,15 @@
         margin-top: 2rem;
     }
 
+    ul {
+        li {
+            p {
+                margin-top: 0;
+                padding-left: 1rem;
+            }
+        }
+    }
+
 }
 
 .flexP {
@@ -104,12 +113,49 @@
     }
 }
 
+//***************Rekrutacja
+.rekrutacja-mobile {
+    @include breakpoint($all-mobile) {
+        display: none;
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 3rem;
+        margin-top: 4rem;
+    }
+
+    a {
+        text-decoration: underline;
+        display: flex;
+
+        p {
+            padding-left: 1em;
+        }
+    }
+
+    h5 {
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
+}
+
 //***************STATUT
 
 .statut,
 .regulamin {
-
+    white-space: pre-wrap;
     margin-bottom: 15rem;
+
+    ul, ol {
+        white-space: normal;
+        margin-left: 0;
+        padding-left: 0;
+
+        li {
+            padding-left: 1.2rem;
+        }
+    }
 
     h1,
     h2,
@@ -124,24 +170,57 @@
         font-size: $font-size;
         font-family: $font-main;
         color: $color-font;
-        margin-top: 3rem;
-        margin-bottom: 2rem;
     }
 
     h5 {
         color: $color-font;
-        margin-bottom: .2rem;
+        font-family: $font-main;
+        font-weight: 700;
+        margin-top: -1.2rem;
     }
 
     h4 {
         font-size: $font-size;
         font-family: $font-main;
         color: $color-font;
-        margin-top: 3rem;
-        margin-bottom: .2rem;
+        margin-top: 5rem;
     }
 
     h2 {
         font-size: calc(#{$font-size} * 2);
     }
+
+    h3 {
+        color: $color-font;
+        font-family: $font-main;
+        line-height: 1.5;
+        margin-bottom: 3rem;
+    }
+}
+
+.statut {
+    p {
+        padding-left: 6rem;
+        margin: -2rem 0 0 0;
+        line-height: 1.7;
+    }
+
+    li {
+        p {
+            margin: 0;
+            padding-left: 0;
+        }
+    }
+
+    ul {
+        li {
+        margin-left: 3rem;
+        } 
+    }
+    
+        p:last-child {
+            text-align: right;
+        }
+    
+    
 }

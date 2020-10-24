@@ -21,9 +21,8 @@ const Aktualnosci = () => {
           }
           foto {
             title
-            fluid(maxWidth: 900, quality: 100) {
+            fluid(maxWidth: 700, quality: 100) {
               ...GatsbyContentfulFluid
-              sizes
             }
           }
         }
@@ -31,7 +30,7 @@ const Aktualnosci = () => {
       
         kids: file(relativePath: { eq: "kids1.png" }) {
           childImageSharp {
-            fluid(quality: 100, maxWidth: 900) {
+            fluid(quality: 100, maxWidth: 700) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }

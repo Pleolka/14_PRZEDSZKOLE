@@ -1,0 +1,30 @@
+.rek {
+  white-space: pre-wrap;
+
+  a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: underline;
+    
+    p {
+    margin-left: 1rem;
+    }
+  }
+
+  a:hover {
+    p {
+      color: $color-base;
+    }
+  }
+
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: -1rem 0 -.5rem 1rem;
+    padding: 0 0 0 1rem;
+  }
+  
+}

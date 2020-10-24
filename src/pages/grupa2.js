@@ -10,6 +10,16 @@ const Grupa2 = () => {
 
   const data = useStaticQuery(graphql`
     query {
+      allContentfulGrupy(filter: {nrGrupy: {eq: 2}}) {
+        nodes {
+          childContentfulGrupyOpisGrupyTextNode {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+
       allContentfulDydaktyka(
         filter: {grupa: {eq: "Grupa Słoneczek"}}, 
         sort: {fields: date, order: DESC},
@@ -55,7 +65,8 @@ const Grupa2 = () => {
       <div className="container">
 
         <h1 className="group-title">Grupa Słoneczek</h1>
-        <p>Opis grupy</p>
+        <div dangerouslySetInnerHTML={{ __html: data.allContentfulGrupy.nodes[0].childContentfulGrupyOpisGrupyTextNode.childMarkdownRemark.html }}>
+        </div>
 
         {data.allContentfulDydaktyka.nodes.map((node) => {
           return (

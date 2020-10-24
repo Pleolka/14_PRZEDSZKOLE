@@ -46,6 +46,17 @@ const IndexPage = () => {
           }
         }
       }
+      allContentfulGrupy {
+        nodes {
+          nrGrupy
+          nazwaGrupy
+          childContentfulGrupyOpiekunowieGrupyTextNode {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
   }
   `);
 
@@ -60,26 +71,33 @@ const IndexPage = () => {
       <SEO title="Home" />
       <div className="container">
         <div className="flex3-1 card-wrapper">
-          <CardLink
-            cardTitle="Grupa Aniołków"
-            cardName1="s. Ewa Oczkowska"
-            cardName2="s. Ewa Oczkowska"
-            dataImg={imgGr1}
-            path="grupa1" />
 
-          <CardLink
-            cardTitle="Grupa Słoneczek"
-            cardName1="s. Ewa Oczkowska"
-            cardName2="s. Ewa Oczkowska"
-            dataImg={imgGr2}
-            path="grupa2" />
+          {data.allContentfulGrupy.nodes.map((node) => {
 
-          <CardLink
-            cardTitle="Grupa Promyczków"
-            cardName1="s. Ewa Oczkowska"
-            cardName2="s. Ewa Oczkowska"
-            dataImg={imgGr3}
-            path="grupa3" />
+            let imgCard = "";
+
+            switch (node.nrGrupy) {
+              case 1: imgCard = imgGr1;
+                break;
+
+              case 2:
+                imgCard = imgGr2;
+                break;
+
+              case 3:
+                imgCard = imgGr3;
+                break;
+            }
+
+            return (
+              <CardLink
+                cardTitle={node.nazwaGrupy}
+                cardText={node.childContentfulGrupyOpiekunowieGrupyTextNode.childMarkdownRemark.html}
+                dataImg={imgCard}
+                path={`grupa${node.nrGrupy}`} />
+            )
+          })}
+
         </div>
 
         <Card cardTitle="Św. Jan Paweł II"

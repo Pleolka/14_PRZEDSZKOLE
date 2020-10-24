@@ -88,6 +88,7 @@
     opacity: 0.6;
     line-height: 1.1;
     padding-bottom: 2rem;
+    white-space: pre-wrap;
 
     @include breakpoint ($mobileandtablet) {
         flex-grow: 1;
@@ -134,7 +135,7 @@
     overflow: hidden;
 
     h1,
-    h6,
+    h5,
     p {
         margin: 2rem;
     }
