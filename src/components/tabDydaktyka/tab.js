@@ -17,7 +17,7 @@ class Tab extends React.Component {
 
         const listContent1 = this.state.isActive === '1' ? (
             <TabContents
-                className={""}
+                className={"wiekowe"}
                 dataTab='1'
                 content={this.props.tematyka}
                 content2={this.props.opis}
@@ -33,7 +33,7 @@ class Tab extends React.Component {
 
         const listContent2 = this.state.isActive === '2' ? (
             <TabContents
-                className={""}
+                className={"wiekowe"}
                 dataTab='2'
                 content={this.props.dydaktyka}
                 title="Zadania wychowawczo – dydaktyczne i umiejętności dziecka:" />

@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/layout'
@@ -76,8 +77,8 @@ const Grupa2 = () => {
                 date={node.date}
                 group={node.grupa}
                 opis={node.opis.childMarkdownRemark.html}
-                wiersz={node.wiersz.childMarkdownRemark.html}
-                piosenka={node.piosenka.childMarkdownRemark.html}
+                wiersz={node.wiersz === null ? "" : node.wiersz.childMarkdownRemark.html}
+                piosenka={node.piosenka === null ? "" : node.piosenka.childMarkdownRemark.html}
                 tematyka={node.tematyka.childMarkdownRemark.html}
                 dydaktyka={node.dydaktyka.childMarkdownRemark.html}
               />
@@ -86,8 +87,8 @@ const Grupa2 = () => {
                 date={node.date}
                 group={node.grupa}
                 opis={node.opis.childMarkdownRemark.html}
-                wiersz={node.wiersz.childMarkdownRemark.html}
-                piosenka={node.piosenka.childMarkdownRemark.html}
+                wiersz={node.wiersz === null ? "" : node.wiersz.childMarkdownRemark.html}
+                piosenka={node.piosenka === null ? "" : node.piosenka.childMarkdownRemark.html}
                 tematyka={node.tematyka.childMarkdownRemark.html}
                 dydaktyka={node.dydaktyka.childMarkdownRemark.html}
               />
