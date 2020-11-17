@@ -53,7 +53,7 @@ const Rekrutacja = () => {
           }
         }
 
-        allContentfulRekrutacjaAktualnosci (sort: {fields: date, order: DESC}){
+        allContentfulRekrutacjaAktualnosci (sort: {fields: date, order: DESC}, filter: {date: {lt: "31 stycznia 2019"}}){
           nodes {
             tytul
             childContentfulRekrutacjaAktualnosciTekstRichTextNode {
