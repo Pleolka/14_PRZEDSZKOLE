@@ -85,22 +85,17 @@ module.exports = {
     npm install --save gatsby-plugin-prefetch-google-fonts 
     */
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Francois One`,
-            subsets: [`latin-ext`]
-          },
-          {
-            family: `Roboto Mono`,
-            variants: [`400`, `700`]
-          },
-          {
-            family: `Roboto`,
-            subsets: [`latin-ext`]
-          },
+
+          `Francois One`,
+
+
+          `Roboto`
+
         ],
+        display: 'swap'
       },
     },
 
