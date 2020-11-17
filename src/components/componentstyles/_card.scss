@@ -123,28 +123,3 @@
     height: auto;
     position: relative;
 }
-
-.card-column {
-    @include drop-shadow;
-    width: 100%;
-    background-color: white;
-    border-radius: 25px;
-    margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-
-    h1,
-    h5,
-    p {
-        margin: 2rem;
-    }
-
-    ul {
-        margin: 0 2rem 2rem 2rem;
-    }
-
-    @include breakpoint ($mobileandtablet) {
-        flex-direction: column;
-    }
-}

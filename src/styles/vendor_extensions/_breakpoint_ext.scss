@@ -48,6 +48,30 @@ $mobileandtablet: max-width 979px;
     }
 
     @include breakpoint($desktop) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.flex2kontakt {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include breakpoint($desktop) {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -96,7 +120,7 @@ $mobileandtablet: max-width 979px;
     }
 
     @include breakpoint($desktop) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     @include breakpoint($wide) {
@@ -173,6 +197,30 @@ $mobileandtablet: max-width 979px;
 
     @include breakpoint($wide) {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint($extrawide) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.flex4-3-2 {
+    @extend .flex;
+
+    @include breakpoint($mobile) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint($desktop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint($wide) {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     @include breakpoint($extrawide) {

@@ -17,26 +17,29 @@ class Tab extends React.Component {
 
         const listContent1 = this.state.isActive === '1' ? (
             <TabContents
-                className={""}
+                className={"text"}
                 dataTab='1'
-                content={this.props.tematyka}
-                content2={this.props.opis}
-                title="Tematyka kompleksowa:" />
+                content={this.props.oPrzedszkolu}
+                title="O Przedszkolu" />
         ) : (
                 <TabContents
                     style={{ display: "none" }}
                     dataTab='1'
-                    content={this.props.tematyka}
+                    content={this.props.oPrzedszkolu}
                 />
             )
             ;
 
         const listContent2 = this.state.isActive === '2' ? (
             <TabContents
-                className={""}
+                className={"tab-dydaktyka"}
                 dataTab='2'
-                content={this.props.dydaktyka}
-                title="Zadania wychowawczo – dydaktyczne i umiejętności dziecka:" />
+                content1={this.props.umiejetnosci}
+                content2={this.props.poznawanie}
+                content3={this.props.okazje}
+                name1={this.props.umiejetnosciName}
+                name2={this.props.poznawanieName}
+                name3={this.props.okazjeName} />
         ) : (
                 <TabContents
                     style={{ display: "none" }}
@@ -48,46 +51,73 @@ class Tab extends React.Component {
 
         const listContent3 = this.state.isActive === '3' ? (
             <TabContents
-                className={""}
+                className={"personel"}
                 dataTab='3'
-                content={this.props.piosenka} />
+                personel={this.props.personel}
+                title="Personel" />
         ) : (
                 <TabContents
                     style={{ display: "none" }}
                     dataTab='3'
-                    content={this.props.piosenka}
+                    personel={this.props.personel}
                 />
             )
             ;
 
         const listContent4 = this.state.isActive === '4' ? (
             <TabContents
-                className={""}
+                className={"zdj"}
                 dataTab='4'
-                content={this.props.wiersz} />
+                zdjecia={this.props.zdjecia} />
         ) : (
                 <TabContents
                     style={{ display: "none" }}
                     dataTab='4'
-                    content={this.props.wiersz}
+                    zdjecia={this.props.zdjecia}
+                />
+            )
+            ;
+
+        const listContent5 = this.state.isActive === '5' ? (
+            <TabContents
+                className={"text"}
+                dataTab='5'
+                content={this.props.historia}
+                title="Historia Przedszkola" />
+        ) : (
+                <TabContents
+                    style={{ display: "none" }}
+                    dataTab='5'
+                    content={this.props.historia}
+                />
+            )
+            ;
+
+        const listContent6 = this.state.isActive === '6' ? (
+            <TabContents
+                className={"text"}
+                dataTab='6'
+                content={this.props.hymn}
+                title="Hymn Przedszkola" />
+        ) : (
+                <TabContents
+                    style={{ display: "none" }}
+                    dataTab='6'
+                    content={this.props.hymn}
                 />
             )
             ;
 
         return (
 
-            <div className="tabDyd" >
-                <div className="tabDyd-menu">
-                    <div>
-                        <h2>{this.props.miesiac}</h2>
-                        <p>{this.props.date}</p>
-                    </div>
+            <div className="tab" >
+                <div className="tab-menu">
                     <ul>
                         < TabMenu
                             isActive={this.state.isActive}
                             onClick={this.changeActive}
                             dataTab='1'
-                            title='Tematyka'
+                            title='O Przedszkolu'
                         />
                         < TabMenu
                             isActive={this.state.isActive}
@@ -99,22 +129,36 @@ class Tab extends React.Component {
                             isActive={this.state.isActive}
                             onClick={this.changeActive}
                             dataTab='3'
-                            title='Piosenki'
+                            title='Personel'
                         />
                         < TabMenu
                             isActive={this.state.isActive}
                             onClick={this.changeActive}
                             dataTab='4'
-                            title='Wierszyki'
+                            title='Zdjęcia'
+                        />
+                        < TabMenu
+                            isActive={this.state.isActive}
+                            onClick={this.changeActive}
+                            dataTab='5'
+                            title='Historia'
+                        />
+                        < TabMenu
+                            isActive={this.state.isActive}
+                            onClick={this.changeActive}
+                            dataTab='6'
+                            title='Hymn'
                         />
                     </ul>
                 </div>
 
-                <div className="tabDyd-content">
+                <div className="tab-content">
                     {listContent1}
                     {listContent2}
                     {listContent3}
                     {listContent4}
+                    {listContent5}
+                    {listContent6}
                 </div>
             </div>
         );

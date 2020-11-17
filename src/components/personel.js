@@ -11,7 +11,7 @@ const Personel = (props) => {
                     key={props.key}
                     className="personel-card-img" />
                 <div>
-                    <h6>{props.nazwa}</h6>
+                    <p>{props.nazwa}</p>
                     <p>{props.stanowisko}</p>
                 </div>
             </div>

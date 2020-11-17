@@ -24,7 +24,7 @@ const Dydaktyka = (props) => {
             </div>
 
             <div className="dyd-list">
-                <h3>Dydaktyka</h3>
+                <h3>Zadania wychowawczo – dydaktyczne i umiejętności dziecka:</h3>
                 <div className="dyd-header-opis"
                     dangerouslySetInnerHTML={{ __html: props.dydaktyka }}>
                 </div>

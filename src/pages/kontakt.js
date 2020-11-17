@@ -27,7 +27,7 @@ const Kontakt = () => {
             <SEO title="Home" />
             <div className="container kontakt">
                 <h1>Kontakt</h1>
-                <div className="flex2 kontakt-wraper">
+                <div className="flex2kontakt kontakt-wraper">
                     <div>
                         <h5>{YAMLData.title}
                             <br />{YAMLData.subtitle[0]}
@@ -46,7 +46,7 @@ const Kontakt = () => {
 
 
                 <h4>Współpraca</h4>
-                <div className="flex2 kontakt-wraper">
+                <div className="flex2kontakt kontakt-wraper">
                     <div>
                         <h5>Poradnia
                             <br />psychologiczno-pedagogiczna</h5>

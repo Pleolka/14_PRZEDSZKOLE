@@ -50,9 +50,27 @@
     }
 }
 
-.flex-center {
-    display: flex;
-    justify-content: center;
+.dydaktyka {
+    p {
+        margin-bottom: 0;
+    }
+
+    li {
+        margin-top: 0;
+        line-height: 1.2;
+    }
+
+    div {
+        white-space: pre-wrap;
+    }
+}
+
+.div-text {
+    white-space: pre-wrap;
+
+    p {
+        margin: 0;
+    }
 }
 
 .section-color {
@@ -106,7 +124,7 @@
     display: grid;
     grid-template-columns: 140px 2fr;
 
-    p{
+    p {
         &:nth-child(odd) {
             font-weight: 700;
         }
@@ -147,7 +165,8 @@
     white-space: pre-wrap;
     margin-bottom: 15rem;
 
-    ul, ol {
+    ul,
+    ol {
         white-space: normal;
         margin-left: 0;
         padding-left: 0;
@@ -214,13 +233,13 @@
 
     ul {
         li {
-        margin-left: 3rem;
-        } 
-    }
-    
-        p:last-child {
-            text-align: right;
+            margin-left: 3rem;
         }
-    
-    
+    }
+
+    p:last-child {
+        text-align: right;
+    }
+
+
 }
