@@ -6,10 +6,9 @@ import SEO from '../components/SEO'
 const page404 = () => {
     return (
         <Layout>
-            <SEO title="Home" />
+            <SEO title="404" />
             <h1>404</h1>
-            <h1>404</h1>
-            <h1>404</h1>
+            <p>Strona o podanym adresie nie istnieje.</p>
         </Layout>
     )
 }

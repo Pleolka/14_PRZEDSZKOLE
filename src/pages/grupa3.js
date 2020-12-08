@@ -60,7 +60,7 @@ const Grupa3 = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Grupa Promyczków" />
       <div className="container">
 
         <h1 className="group-title">Grupa Promyczków</h1>

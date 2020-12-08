@@ -24,7 +24,7 @@ const Kontakt = () => {
 
     return (
         <Layout>
-            <SEO title="Home" />
+            <SEO title="Kontakt" />
             <div className="container kontakt">
                 <h1>Kontakt</h1>
                 <div className="flex2kontakt kontakt-wraper">

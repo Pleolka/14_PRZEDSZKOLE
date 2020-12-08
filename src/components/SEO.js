@@ -14,10 +14,10 @@ const Head = ({ title }) => {
     `)
 
     return (
-        <Helmet title={`${title} | ${data.site.siteMetadata.title}`} >
+        <Helmet>
             <html lang="pl" />
             <meta charset="utf-8" />
-            <title>Przedszkole nr 8 im. Jana Pawła II w Oświęcimiu</title>
+            <title>{`${title} | ${data.site.siteMetadata.title}`}</title>
             <meta name="description" content="Przedszkole" />
             <meta name="keywords" content="przedszkole" />
             <meta name="author" content="IKS Aleksandra Fabian" />
@@ -27,3 +27,5 @@ const Head = ({ title }) => {
 }
 
 export default Head
+
+//Przedszkole nr 8 im. Jana Pawła II w Oświęcimiu

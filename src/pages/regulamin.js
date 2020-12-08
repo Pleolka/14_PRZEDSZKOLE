@@ -35,7 +35,7 @@ const Regulamin = () => {
 
   return (
     <Layout>
-      <SEO title="Grupa aniołków" />
+      <SEO title="Regulamin" />
 
       <div className="container regulamin" dangerouslySetInnerHTML={{ __html: regulaminHTML }}>
       </div>

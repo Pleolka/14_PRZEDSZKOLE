@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../components/layout'
@@ -61,7 +60,7 @@ const Grupa2 = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Grupa słoneczek" />
 
       <div className="container">
 

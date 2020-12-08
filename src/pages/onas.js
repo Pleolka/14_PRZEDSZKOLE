@@ -93,7 +93,7 @@ const Onas = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="O nas" />
       <div className="onas">
         <div className="container">
 

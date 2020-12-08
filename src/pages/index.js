@@ -87,6 +87,8 @@ const IndexPage = () => {
               case 3:
                 imgCard = imgGr3;
                 break;
+
+              default: // Do nothing
             }
 
             return (

@@ -25,7 +25,9 @@ const Statut = () => {
 
   return (
     <Layout>
-      <SEO title="Statut przedszkola" />
+      <SEO title="Statut przedszkola"
+        description=""
+        keywords="" />
 
       <div className="container statut"
         dangerouslySetInnerHTML={{ __html: statutHTML }}>

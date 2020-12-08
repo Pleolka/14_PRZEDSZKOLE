@@ -43,7 +43,7 @@ const Aktualnosci = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Aktualności" />
       <div className="container">
         <h1 className="first-section">
           Aktualności

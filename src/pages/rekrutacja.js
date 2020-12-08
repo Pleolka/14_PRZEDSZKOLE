@@ -73,7 +73,7 @@ const Rekrutacja = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Rekrutacja" />
       <div className="container">
         <h1 className="first-section">Rekrutacja</h1>
 

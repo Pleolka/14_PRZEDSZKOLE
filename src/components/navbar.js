@@ -57,7 +57,6 @@ class Navbar extends React.Component {
 
             <div className="nav-bar-mobile">
                 <button className="nav-bar-icon"
-                    role="navigation"
                     onClick={this.handleClick}>
                     <FontAwesomeIcon icon={this.state.clicked ? faTimes : faBars} />
                 </button>

@@ -40,7 +40,7 @@ const DlaRodzicow = () => {
 
   return (
     <Layout>
-      <SEO title="Grupa aniołków" />
+      <SEO title="Dla rodziców" />
 
       <div className="container dlarodzicow">
 
