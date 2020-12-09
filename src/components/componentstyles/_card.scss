@@ -118,8 +118,12 @@
 }
 
 .card-img {
-    width: 100%;
+    width: 30%;
     object-fit: contain;
     height: auto;
     position: relative;
+
+    @include breakpoint ($mobileandtablet) {
+        width: 100%;
+    }
 }
