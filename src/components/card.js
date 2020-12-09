@@ -7,11 +7,13 @@ const Card = (props) => {
         <>
             <div className="card">
                 <Img fluid={props.cardImg}
-                    className="card-img" />
+                    className="card-img"
+                    alt={props.alt} />
                 <div>
                     <h1>{props.cardTitle}</h1>
                     <h6>{props.cardSecondTitle}</h6>
                     <p>{props.tekst}</p>
+                    <div dangerouslySetInnerHTML={{ __html: props.tekstHtml }}></div>
                 </div>
             </div>
         </>

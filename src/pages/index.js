@@ -46,7 +46,25 @@ const IndexPage = () => {
           }
         }
       }
-      allContentfulGrupy {
+
+      allContentfulJanPawelIi {
+        nodes {
+          postac
+          zdj {
+            fluid (maxWidth: 400, quality: 100) {
+              ...GatsbyContentfulFluid
+            }
+            title
+          }
+          opis {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+
+      allContentfulGrupy(sort: {order: ASC, fields: nrGrupy}) {
         nodes {
           nrGrupy
           nazwaGrupy
@@ -63,8 +81,9 @@ const IndexPage = () => {
   const imgGr1 = data.imgGr1.childImageSharp.fluid
   const imgGr2 = data.imgGr2.childImageSharp.fluid
   const imgGr3 = data.imgGr3.childImageSharp.fluid
-  const imgJp2 = data.imgJp2.childImageSharp.fluid
+  //const imgJp2 = data.imgJp2.childImageSharp.fluid
   const kids1 = data.kids1.childImageSharp.fluid
+  const jp2 = data.allContentfulJanPawelIi.nodes[0]
 
   return (
     <Layout isIndexPage={true}>
@@ -102,10 +121,11 @@ const IndexPage = () => {
 
         </div>
 
-        <Card cardTitle="Św. Jan Paweł II"
+        <Card cardTitle={jp2.postac}
           cardSecondTitle="Nasz patron"
-          cardImg={imgJp2}
-          tekst="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)." />
+          cardImg={jp2.zdj.fluid}
+          alt={jp2.zdj.title}
+          tekstHtml={jp2.opis.childMarkdownRemark.html} />
       </div>
 
       <Img fluid={kids1}
