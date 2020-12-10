@@ -42,3 +42,12 @@
         }
     }
 }
+
+.CookieConsent {
+    background-color: $color-base-dark !important;
+
+    p {
+        color: white;
+        font-size: $font-size-small;
+    }
+}

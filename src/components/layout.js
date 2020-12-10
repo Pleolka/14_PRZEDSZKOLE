@@ -1,4 +1,5 @@
 import React from 'react'
+import CookieConsent from 'react-cookie-consent';
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -47,6 +48,14 @@ const Layout = (props) => {
 
       </div>
 
+      <CookieConsent
+        location="bottom"
+        buttonText="Akceptuję"
+        declineButtonText="Decline"
+        cookieName="gatsby-gdpr-google-analytics">
+        <p><b>INFORMACJA DOTYCZĄCA PLIKÓW COOKIES</b></p>
+        <p>Informujemy, iż w celu optymalizacji treści dostępnych w naszym serwisie, dostosowania ich do Państwa indywidualnych potrzeb korzystamy z informacji zapisanych za pomocą plików cookies na urządzeniach końcowych użytkowników. Pliki cookies użytkownik może kontrolować za pomocą ustawień swojej przeglądarki internetowej. Dalsze korzystanie z naszego serwisu internetowego, bez zmiany ustawień przeglądarki internetowej oznacza, iż użytkownik akceptuje stosowanie plików cookies.</p>
+      </CookieConsent>
 
       <Footer />
     </div>

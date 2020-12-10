@@ -136,8 +136,16 @@ module.exports = {
 
         ],
       },
-    }
+    },
 
+    /* COOKIE
+    npm install --save gatsby-plugin-gdpr-cookies
+    npm install --save react-cookie-consent
+    */
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+
+    },
 
   ],
 }
