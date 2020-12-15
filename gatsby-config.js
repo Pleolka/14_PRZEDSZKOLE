@@ -14,6 +14,7 @@ module.exports = {
   siteMetadata: {
     title: 'Przedszkole nr 8 im. Jana Pawła II',
     author: 'IKS Aleksandra Fabian',
+    siteUrl: `https://www.przedszkoleoswiecim.com.pl`,
   },
 
   /* Your site config here */
@@ -146,6 +147,17 @@ module.exports = {
       resolve: `gatsby-plugin-gdpr-cookies`,
 
     },
+
+    /* SITE MAP
+    npm install gatsby-plugin-sitemap
+    */
+    `gatsby-plugin-sitemap`,
+
+
+    /* ROBOTS TXT
+    npm install --save gatsby-plugin-robots-txt
+    */
+    'gatsby-plugin-robots-txt',
 
   ],
 }
