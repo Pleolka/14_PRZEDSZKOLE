@@ -4,9 +4,9 @@
     padding-bottom: 2rem;
 
     p {
-         &:last-child {
-             margin-top: 1rem;
-         }
+        &:last-child {
+            margin-top: 1rem;
+        }
     }
 }
 
@@ -16,17 +16,19 @@
 
     a {
         text-align: right;
+
         &:nth-child(4),
         &:nth-child(8) {
             margin-top: 1rem;
         }
+
         color: white;
 
         &:hover {
             color: $color-secondary;
             transition: all .3s;
         }
-        
+
         @include breakpoint($mobileandtablet) {
             text-align: center;
         }
@@ -36,7 +38,7 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 1rem;
-        
+
         @include breakpoint($mobileandtablet) {
             display: none;
         }
@@ -63,6 +65,7 @@
     p {
         color: white;
         line-height: 1.5;
+        white-space: pre-wrap;
     }
 
     h6,
@@ -75,10 +78,10 @@
     }
 
     &-right {
-        
-            text-align: right;
-        
-        
+
+        text-align: right;
+
+
 
         @include breakpoint($mobileandtablet) {
             text-align: center;

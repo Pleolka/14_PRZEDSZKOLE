@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import YAMLData from "../data/data.yaml"
 
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
@@ -17,10 +16,24 @@ const Kontakt = () => {
             }
           }
         }
-    }
-    `);
+        allContentfulInformacjeDodatkoweOPrzedszkolu {
+            nodes {
+              adres {
+                adres
+              }
+              telefon
+              title
+              mail
+              godzinyOtwarcia
+              subtitle {
+                subtitle
+              }
+            }
+          }
+    }`);
 
     const kids = data.kids.childImageSharp.fluid
+    const info = data.allContentfulInformacjeDodatkoweOPrzedszkolu.nodes[0]
 
     return (
         <Layout>
@@ -29,13 +42,11 @@ const Kontakt = () => {
                 <h1>Kontakt</h1>
                 <div className="flex2kontakt kontakt-wraper">
                     <div>
-                        <h5>{YAMLData.title}
-                            <br />{YAMLData.subtitle[0]}
-                            <br />{YAMLData.subtitle[1]}</h5>
-                        <p><br />{YAMLData.address[0]}
-                            <br />{YAMLData.address[1]}</p>
-                        <p><b>{YAMLData.phone}</b></p>
-                        <p><b>{YAMLData.mail}</b></p>
+                        <h5>{info.title}
+                            <br />{info.subtitle.subtitle}</h5>
+                        <p>{info.adres.adres}</p>
+                        <p><b>{info.telefon}</b></p>
+                        <p><b>{info.mail}</b></p>
                     </div>
                     <div>
                         <h5>Dyrektor</h5>

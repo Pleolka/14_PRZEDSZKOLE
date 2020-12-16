@@ -1,5 +1,4 @@
 import React from 'react'
-import YAMLData from "../data/data.yaml"
 import Img from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby'
 
@@ -14,9 +13,24 @@ const Header = (props) => {
               }
           }
         }
-    }
-    `);
+        allContentfulInformacjeDodatkoweOPrzedszkolu {
+            nodes {
+              adres {
+                adres
+              }
+              telefon
+              title
+              mail
+              godzinyOtwarcia
+              subtitle {
+                subtitle
+              }
+            }
+          }
+    }`);
+
     const logo = data.logo.childImageSharp.fixed
+    const info = data.allContentfulInformacjeDodatkoweOPrzedszkolu.nodes[0]
 
     return (
         <header className={props.className}>
@@ -27,14 +41,14 @@ const Header = (props) => {
                             alt="logo" />
                     </div>
                     <div>
-                        <h1>{YAMLData.title}</h1>
-                        <h5>{YAMLData.subtitle[0]} - {YAMLData.subtitle[1]}</h5>
+                        <h1>{info.title}</h1>
+                        <h5>{info.subtitle.subtitle}</h5>
                     </div>
                 </div>
 
 
-                <h6>Tel.: {YAMLData.phone}<br />
-                    {YAMLData.mail}</h6>
+                <h6>Tel.: {info.telefon}<br />
+                    {info.mail}</h6>
 
             </div>
         </header>

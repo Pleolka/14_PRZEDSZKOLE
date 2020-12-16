@@ -1,8 +1,27 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import YAMLData from "../data/data.yaml"
+import { graphql, useStaticQuery } from 'gatsby'
 
 const Footer = () => {
+
+    const data = useStaticQuery(graphql`{
+        allContentfulInformacjeDodatkoweOPrzedszkolu {
+            nodes {
+              adres {
+                adres
+              }
+              telefon
+              title
+              mail
+              godzinyOtwarcia
+              subtitle {
+                subtitle
+              }
+            }
+          }
+    }`)
+
+    const info = data.allContentfulInformacjeDodatkoweOPrzedszkolu.nodes[0]
 
     return (
         <div>
@@ -10,15 +29,15 @@ const Footer = () => {
                 <div className="container footer-content flex2">
                     <div className="footer-content">
                         <h4>Kontakt</h4>
-                        <h6>{YAMLData.title} {YAMLData.subtitle[0]}<br />
-                            {YAMLData.subtitle[1]}</h6>
+                        <h6>{info.title}
+                            {info.subtitle.subtitle}
+                        </h6>
 
-                        <p>{YAMLData.hours}</p>
-                        <p><b>Tel.: {YAMLData.phone}</b></p>
-                        <p><b>{YAMLData.mail}</b></p>
+                        <p>{info.godzinyOtwarcia}</p>
+                        <p><b>Tel.: {info.telefon}</b></p>
+                        <p><b>{info.mail}</b></p>
 
-                        <p>{YAMLData.address[0]}
-                            <br />{YAMLData.address[1]}</p>
+                        <p>{info.adres.adres}</p>
                     </div>
 
                     <div class="footer-link">
@@ -39,7 +58,7 @@ const Footer = () => {
 
                 <div className="container footer-content-adds">
                     <hr />
-                    <p>Created by IKS Aleksandra Fabian, 2020</p>
+                    <p>Created by IKS Aleksandra Fabian, 2021</p>
                 </div>
             </footer>
         </div>
