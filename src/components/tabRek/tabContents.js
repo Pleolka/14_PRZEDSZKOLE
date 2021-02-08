@@ -12,11 +12,23 @@ const TabContents = (props) => {
                 :
                 props.aktualnosci.map((aktualnosc) => {
                     return (
-                        <>
-                            <h6>{aktualnosc.tytul}</h6>
+                        <div className="rek-aktualnosc">
+                            <div className="rek-aktualnosci-header">
+                                <h6>{aktualnosc.tytul}</h6>
+                                <p>{aktualnosc.date}</p>
+                            </div>
+
                             <div dangerouslySetInnerHTML={{ __html: aktualnosc.childContentfulRekrutacjaAktualnosciTekstRichTextNode.childContentfulRichText.html }}>
                             </div>
-                        </>
+                            {aktualnosc.obraz === null ?
+                                <></>
+                                :
+                                <Img fluid={aktualnosc.obraz.fluid}
+                                    objectFit="contain"
+                                    alt={aktualnosc.obraz.title}
+                                />}
+
+                        </div>
                     )
                 }
                 )
@@ -25,6 +37,8 @@ const TabContents = (props) => {
             <div dangerouslySetInnerHTML={{ __html: props.content }}
                 className={props.className}>
             </div>
+
+            {props.children}
 
             {props.downloads === undefined ?
                 ""

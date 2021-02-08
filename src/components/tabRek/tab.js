@@ -1,6 +1,7 @@
 import React from 'react'
 import TabMenu from './tabMenu'
 import TabContents from './tabContents'
+import Img from 'gatsby-image'
 
 class Tab extends React.Component {
     constructor(props) {
@@ -49,7 +50,13 @@ class Tab extends React.Component {
             <TabContents
                 className={""}
                 dataTab='3'
-                content={this.props.wazneInfo} />
+                content={this.props.wazneInfo}>
+
+                <Img fluid={this.props.tabRekrutacja.fluid}
+                    objectFit="contain"
+                    alt={this.props.tabRekrutacja.title}
+                />
+            </TabContents>
         ) : (
                 <TabContents
                     style={{ display: "none" }}

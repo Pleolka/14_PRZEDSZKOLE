@@ -22,7 +22,7 @@ module.exports = {
     /* npm install --global gatsby-cli */
 
     /* HELMET - ustawinia head dla stron statycznych
-    ** instalacja: npm i gatsby-react-helmet react-helmet
+    ** instalacja: npm install gatsby-plugin-react-helmet react-helmet
     */
     'gatsby-plugin-react-helmet',
 

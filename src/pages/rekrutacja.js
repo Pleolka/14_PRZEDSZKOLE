@@ -53,9 +53,24 @@ const Rekrutacja = () => {
           }
         }
 
+        contentfulAsset(id: {eq: "6dfeafec-a588-5d9d-a51a-05a5717621b6"}) {
+          title
+          id
+          fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyContentfulFluid
+          }
+        }
+
         allContentfulRekrutacjaAktualnosci (sort: {fields: date, order: DESC}, filter: {date: {lt: "31 stycznia 2019"}}){
           nodes {
             tytul
+            date(formatString: "DD MMMM YYYY", locale: "pl")
+            obraz {
+              title
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyContentfulFluid
+              }
+            }
             childContentfulRekrutacjaAktualnosciTekstRichTextNode {
               childContentfulRichText {
                 html
@@ -70,13 +85,13 @@ const Rekrutacja = () => {
   const content = data.allContentfulRekrutacja.nodes[0]
   const kids = data.kids.childImageSharp.fluid
   const icon = data.icon.childImageSharp.fixed
+  const tabRekrutacja = data.contentfulAsset
 
   return (
-    <Layout>
+    < Layout >
       <SEO title="Rekrutacja" />
       <div className="container">
         <h1 className="first-section">Rekrutacja</h1>
-
         <Tab
           aktualnosci={aktualnosci}
           download={content.doPobrania}
@@ -84,6 +99,7 @@ const Rekrutacja = () => {
           wyniki={content.childContentfulRekrutacjaWynikiTextNode.childMarkdownRemark.html}
           warunki={content.childContentfulRekrutacjaWarunkiRekrutacjiRichTextNode.childContentfulRichText.html}
           icon={icon}
+          tabRekrutacja={tabRekrutacja}
         />
 
         <div className="rekrutacja-mobile">
@@ -94,6 +110,14 @@ const Rekrutacja = () => {
               <>
                 <h5>{aktualnosc.tytul}</h5>
                 <div dangerouslySetInnerHTML={{ __html: aktualnosc.childContentfulRekrutacjaAktualnosciTekstRichTextNode.childContentfulRichText.html }} />
+
+                {aktualnosc.obraz === null ?
+                  <></>
+                  :
+                  <Img fluid={aktualnosc.obraz.fluid}
+                    objectFit="contain"
+                    alt={aktualnosc.obraz.title}
+                  />}
               </>
             )
           })}
@@ -119,7 +143,7 @@ const Rekrutacja = () => {
         className="footer-image"
         objectFit="cover"
         alt="kids playing the music" />
-    </Layout>
+    </Layout >
   )
 }
 
