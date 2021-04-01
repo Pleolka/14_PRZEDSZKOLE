@@ -4,13 +4,16 @@ import PropTypes from 'prop-types';
 
 const CardBig = (props) => {
 
-    const fotos = props.cardFoto.map((zdj) =>
-        <span>
-            <Img fluid={zdj.fluid}
-                objectFit="contain"
-                alt={zdj.title}
-            />
-        </span>);
+    const fotos = props.cardFoto == null ?
+        <div></div>
+        :
+        props.cardFoto.map((zdj) =>
+            <span>
+                <Img fluid={zdj.fluid}
+                    objectFit="contain"
+                    alt={zdj.title}
+                />
+            </span>);
 
     return (
         <>

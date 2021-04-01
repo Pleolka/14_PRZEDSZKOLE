@@ -81,7 +81,6 @@ const IndexPage = () => {
   const imgGr1 = data.imgGr1.childImageSharp.fluid
   const imgGr2 = data.imgGr2.childImageSharp.fluid
   const imgGr3 = data.imgGr3.childImageSharp.fluid
-  //const imgJp2 = data.imgJp2.childImageSharp.fluid
   const kids1 = data.kids1.childImageSharp.fluid
   const jp2 = data.allContentfulJanPawelIi.nodes[0]
 
