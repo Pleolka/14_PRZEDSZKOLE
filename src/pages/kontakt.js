@@ -15,6 +15,16 @@ const Kontakt = () => {
           }
         }
       }
+      allContentfulWspolpracaPoradnie {
+        nodes {
+          nazwa
+          tytul
+          ulica
+          miasto
+          telefon
+          informacjeDodatkowe
+        }
+      }
       allContentfulInformacjeDodatkoweOPrzedszkolu {
         nodes {
           adres {
@@ -23,6 +33,8 @@ const Kontakt = () => {
           telefon
           title
           mail
+          dyrektor
+          telefonDoDyrektora
           godzinyOtwarcia
           subtitle {
             subtitle
@@ -34,6 +46,7 @@ const Kontakt = () => {
 
   const kids = data.kids.childImageSharp.fluid
   const info = data.allContentfulInformacjeDodatkoweOPrzedszkolu.nodes[0]
+  const poradnie = data.allContentfulWspolpracaPoradnie.nodes
 
   return (
     <Layout>
@@ -57,43 +70,41 @@ const Kontakt = () => {
           </div>
           <div>
             <h5>Dyrektor</h5>
-            <p>s. Ewa OCZKOWSKA</p>
+            <p>{info.dyrektor}</p>
             <p>
-              <b>+48 512 013 482</b>
+              <b>{info.telefonDoDyrektora}</b>
             </p>
           </div>
         </div>
 
         <h4>Współpraca</h4>
+
         <div className="flex2kontakt kontakt-wraper">
-          <div>
-            <h5>
-              Poradnia
-              <br />
-              psychologiczno-pedagogiczna
-            </h5>
-            <p>
-              ul. Bema 4
-              <br />
-              32-600 Oświęcim
-            </p>
-            <p>
-              <b>+48 33 843 11 62</b>
-            </p>
-          </div>
-          <div>
-            <h5>
-              Poradnia
-              <br />
-              logopedyczna
-            </h5>
-            <p>
-              ul. Bema 4
-              <br />
-              32-600 Oświęcim
-            </p>
-            <p>Logopeda: Renata WITKOWSKA</p>
-          </div>
+          {poradnie.map(poradnia => {
+            return (
+              <div>
+                <h5>
+                  {poradnia.nazwa}
+                  <br />
+                  {poradnia.tytul}
+                </h5>
+                <p>
+                  {poradnia.ulica}
+                  <br />
+                  {poradnia.miasto}
+                </p>
+                <p>
+                  {poradnia.informacjeDodatkowe === null
+                    ? ""
+                    : poradnia.informacjeDodatkowe}
+                </p>
+
+                <p>
+                  <b>{poradnia.telefon === null ? "" : poradnia.telefon}</b>
+                </p>
+              </div>
+            )
+          })}
         </div>
       </div>
       <Img fluid={kids} className="footer-image" objectFit="cover" alt="kids" />
