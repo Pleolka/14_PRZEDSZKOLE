@@ -39,6 +39,47 @@
     }
 }
 
+//***************AKTUALNOŚCI
+
+.aktualnosci {
+    column-gap: 2rem;           
+    row-gap: 2rem;
+    >a {
+        border-radius: 20px;
+        @include drop-shadow;
+        overflow: hidden;
+        transition: all .5s;
+
+        >div {
+            height: 70px;
+            display: flex;
+            justify-content: center;
+
+            h4 {
+                text-align: center;
+                align-self: center;
+            }
+        }
+        
+      span {
+        transition: all .5s;
+          display: grid;
+          height: calc(100% - 70px);
+          justify-content: stretch;
+          align-content: stretch;
+      }
+
+
+        &:hover {
+            background-color:rgba(20, 89, 131, 0.5);
+
+            span {
+                opacity: .5;
+            }
+        }
+    }
+}
+
 //***************O NAS
 
 .onas {
