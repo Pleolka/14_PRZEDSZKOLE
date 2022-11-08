@@ -1,16 +1,15 @@
 import React from "react"
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby"
 
-import Layout from '../components/layout'
-import Dydaktyka from '../components/dydaktyka'
-import SEO from '../components/SEO'
-import Tab from '../components/tabDydaktyka/tab'
+import Layout from "../components/layout"
+import Dydaktyka from "../components/dydaktyka"
+import SEO from "../components/SEO"
+import Tab from "../components/tabDydaktyka/tab"
 
 const Grupa1 = () => {
-
   const data = useStaticQuery(graphql`
     query {
-      allContentfulGrupy(filter: {nrGrupy: {eq: 1}}) {
+      allContentfulGrupy(filter: { nrGrupy: { eq: 1 } }) {
         nodes {
           childContentfulGrupyOpisGrupyTextNode {
             childMarkdownRemark {
@@ -21,9 +20,10 @@ const Grupa1 = () => {
       }
 
       allContentfulDydaktyka(
-        filter: {grupa: {eq: "Grupa Aniołków"}}, 
-        sort: {fields: date, order: DESC},
-        limit: 12) {
+        filter: { grupa: { eq: "Grupa Aniołków" } }
+        sort: { fields: date, order: DESC }
+        limit: 12
+      ) {
         nodes {
           grupa
           date(formatString: "YYYY", locale: "PL")
@@ -55,19 +55,24 @@ const Grupa1 = () => {
           }
         }
       }
-      }
-    `)
+    }
+  `)
 
   return (
     <Layout>
       <SEO title="Grupa aniołków" />
       <div className="container">
-
         <h1 className="group-title">Grupa Aniołków</h1>
-        <div dangerouslySetInnerHTML={{ __html: data.allContentfulGrupy.nodes[0].childContentfulGrupyOpisGrupyTextNode.childMarkdownRemark.html }}>
-        </div>
+        <div
+          className="group-intro"
+          dangerouslySetInnerHTML={{
+            __html:
+              data.allContentfulGrupy.nodes[0]
+                .childContentfulGrupyOpisGrupyTextNode.childMarkdownRemark.html,
+          }}
+        ></div>
 
-        {data.allContentfulDydaktyka.nodes.map((node) => {
+        {data.allContentfulDydaktyka.nodes.map(node => {
           return (
             <>
               <Tab
@@ -93,7 +98,6 @@ const Grupa1 = () => {
             </>
           )
         })}
-
       </div>
     </Layout>
   )

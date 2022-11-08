@@ -1,60 +1,60 @@
 import React from "react"
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby"
 
-import Layout from '../components/layout'
-import Dydaktyka from '../components/dydaktyka'
-import SEO from '../components/SEO'
-import Tab from '../components/tabDydaktyka/tab'
+import Layout from "../components/layout"
+import Dydaktyka from "../components/dydaktyka"
+import SEO from "../components/SEO"
+import Tab from "../components/tabDydaktyka/tab"
 
 const Grupa3 = () => {
-
   const data = useStaticQuery(graphql`
-  query {
-    allContentfulGrupy(filter: {nrGrupy: {eq: 3}}) {
-      nodes {
-        childContentfulGrupyOpisGrupyTextNode {
-          childMarkdownRemark {
-            html
+    query {
+      allContentfulGrupy(filter: { nrGrupy: { eq: 3 } }) {
+        nodes {
+          childContentfulGrupyOpisGrupyTextNode {
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }
-    }
 
-    allContentfulDydaktyka(
-      filter: {grupa: {eq: "Grupa Promyczków"}}, 
-      sort: {fields: date, order: DESC},
-      limit: 12) {
-      nodes {
-        grupa
-        date(formatString: "YYYY", locale: "PL")
-        miesiac
-        opis {
-          childMarkdownRemark {
-            html
+      allContentfulDydaktyka(
+        filter: { grupa: { eq: "Grupa Promyczków" } }
+        sort: { fields: date, order: DESC }
+        limit: 12
+      ) {
+        nodes {
+          grupa
+          date(formatString: "YYYY", locale: "PL")
+          miesiac
+          opis {
+            childMarkdownRemark {
+              html
+            }
           }
-        }
-        piosenka {
-          childMarkdownRemark {
-            html
+          piosenka {
+            childMarkdownRemark {
+              html
+            }
           }
-        }
-        tematyka {
-          childMarkdownRemark {
-            html
+          tematyka {
+            childMarkdownRemark {
+              html
+            }
           }
-        }
-        wiersz {
-          childMarkdownRemark {
-            html
+          wiersz {
+            childMarkdownRemark {
+              html
+            }
           }
-        }
-        dydaktyka {
-          childMarkdownRemark {
-            html
+          dydaktyka {
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }
-    }
     }
   `)
 
@@ -62,12 +62,17 @@ const Grupa3 = () => {
     <Layout>
       <SEO title="Grupa Promyczków" />
       <div className="container">
-
         <h1 className="group-title">Grupa Promyczków</h1>
-        <div dangerouslySetInnerHTML={{ __html: data.allContentfulGrupy.nodes[0].childContentfulGrupyOpisGrupyTextNode.childMarkdownRemark.html }}>
-        </div>
+        <div
+          className="group-intro"
+          dangerouslySetInnerHTML={{
+            __html:
+              data.allContentfulGrupy.nodes[0]
+                .childContentfulGrupyOpisGrupyTextNode.childMarkdownRemark.html,
+          }}
+        ></div>
 
-        {data.allContentfulDydaktyka.nodes.map((node) => {
+        {data.allContentfulDydaktyka.nodes.map(node => {
           return (
             <>
               <Tab

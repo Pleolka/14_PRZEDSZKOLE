@@ -86,6 +86,10 @@
   width: 100%;
   white-space: pre-wrap;
 
+  p {
+    text-align: justify;
+  }
+
   ul {
     white-space: normal;
 
@@ -107,6 +111,12 @@
   .wiekowe {
     margin-top: 3rem;
 
+  }
+
+  .color {
+     p {
+       color: $color-base;
+     }
   }
 
 }

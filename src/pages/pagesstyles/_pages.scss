@@ -10,6 +10,10 @@
     text-align: center;
 }
 
+.group-intro {
+    text-align: justify;
+}
+
 //***************KONTAKT
 
 .kontakt {
@@ -128,6 +132,16 @@
     }
 }
 
+.onas-galeria {
+    column-gap: 3rem;
+    row-gap: 3rem;
+
+    p {
+        margin-top: 0;
+        text-align: center;
+    }
+}
+
 //***************DLA RODZICÓW
 .dlarodzicow {
     h5 {
@@ -141,6 +155,7 @@
         p {
             margin-left: 1rem;
             margin-top: 1rem;
+            text-align: justify;
         }
     }
 
@@ -150,6 +165,7 @@
 
     p {
         margin-top: 2rem;
+        text-align: justify;
     }
 
     ul {
@@ -157,6 +173,7 @@
             p {
                 margin-top: 0;
                 padding-left: 1rem;
+                text-align: justify;
             }
         }
     }
