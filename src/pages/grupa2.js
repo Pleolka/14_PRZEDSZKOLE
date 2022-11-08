@@ -48,6 +48,11 @@ const Grupa2 = () => {
               html
             }
           }
+          katecheza {
+            childMarkdownRemark {
+              html
+            }
+          }
           dydaktyka {
             childMarkdownRemark {
               html
@@ -93,6 +98,11 @@ const Grupa2 = () => {
                 }
                 tematyka={node.tematyka.childMarkdownRemark.html}
                 dydaktyka={node.dydaktyka.childMarkdownRemark.html}
+                katecheza={
+                  node.katecheza === null
+                    ? ""
+                    : node.katecheza.childMarkdownRemark.html
+                }
               />
               <Dydaktyka
                 month={node.miesiac}
@@ -111,6 +121,11 @@ const Grupa2 = () => {
                 }
                 tematyka={node.tematyka.childMarkdownRemark.html}
                 dydaktyka={node.dydaktyka.childMarkdownRemark.html}
+                katecheza={
+                  node.katecheza === null
+                    ? ""
+                    : node.katecheza.childMarkdownRemark.html
+                }
               />
             </>
           )

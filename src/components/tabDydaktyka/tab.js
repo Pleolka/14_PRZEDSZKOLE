@@ -66,6 +66,20 @@ class Tab extends React.Component {
           content={this.props.wiersz}
         />
       )
+    const listContent5 =
+      this.state.isActive === "5" ? (
+        <TabContents
+          className={""}
+          dataTab="5"
+          content={this.props.katecheza}
+        />
+      ) : (
+        <TabContents
+          style={{ display: "none" }}
+          dataTab="5"
+          content={this.props.katecheza}
+        />
+      )
     return (
       <div className="tabDyd">
         <div className="tabDyd-menu">
@@ -98,6 +112,12 @@ class Tab extends React.Component {
               dataTab="4"
               title="Wierszyki"
             />
+            <TabMenu
+              isActive={this.state.isActive}
+              onClick={this.changeActive}
+              dataTab="5"
+              title="Katecheza"
+            />
           </ul>
         </div>
 
@@ -106,6 +126,7 @@ class Tab extends React.Component {
           {listContent2}
           {listContent3}
           {listContent4}
+          {listContent5}
         </div>
       </div>
     )
