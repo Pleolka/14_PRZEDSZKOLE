@@ -3,17 +3,6 @@ import Img from "gatsby-image"
 import PropTypes from "prop-types"
 
 const CardBig = props => {
-  const fotos =
-    props.cardFoto == null ? (
-      <div></div>
-    ) : (
-      props.cardFoto.map(zdj => (
-        <span>
-          <Img fluid={zdj.fluid} objectFit="contain" alt={zdj.title} />
-        </span>
-      ))
-    )
-
   return (
     <>
       <div className="card-big">
@@ -23,9 +12,47 @@ const CardBig = props => {
             <h6>{props.cardDate}</h6>
           </div>
 
-          <p>{props.cardTekst}</p>
+          {props.zdjMini === null ? (
+            <p>{props.cardTekst === null ? "" : props.cardText}</p>
+          ) : (
+            <div className="imgText">
+              <Img
+                fluid={props.zdjMini.fluid}
+                objectFit="contain"
+                alt={props.zdjMini.title}
+              />
+              <div>
+                <p>{props.cardTekst}</p>
+              </div>
+            </div>
+          )}
         </div>
-        <div className="card-big-img">{fotos}</div>
+
+        {props.videoSrcURL === "" ? (
+          <></>
+        ) : (
+          <div className="iframe-container">
+            <iframe
+              src={props.videoSrcURL}
+              title={props.videoTitle}
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder="0"
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
+              allowFullScreen
+            />
+          </div>
+        )}
+
+        <div className="card-big-img">
+          <span>
+            <Img
+              fluid={props.plakat === null ? "" : props.plakat.fluid}
+              objectFit="contain"
+              alt={props.plakat === null ? "" : props.plakat.title}
+            />
+          </span>
+        </div>
       </div>
     </>
   )
