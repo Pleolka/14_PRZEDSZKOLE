@@ -41,7 +41,7 @@ const Galeria = () => {
       <div className="container">
         <h1 className="first-section">Galeria</h1>
 
-        <div className="aktualnosci flex5">
+        <div className="aktualnosci flex3-2-1">
           {cardData.map(node => {
             return (
               <a href={node.linkkDoGalerii} target="blank">
