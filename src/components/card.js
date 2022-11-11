@@ -17,6 +17,10 @@ const Card = props => {
           <p>{props.tekst}</p>
           <div dangerouslySetInnerHTML={{ __html: props.tekstHtml }}></div>
         </div>
+
+        <div className="span2">
+          <div dangerouslySetInnerHTML={{ __html: props.tekst2Html }}></div>
+        </div>
       </div>
     </>
   )

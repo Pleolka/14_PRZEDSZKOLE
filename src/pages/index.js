@@ -1,16 +1,15 @@
 import React from "react"
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
-import Layout from '../components/layout'
-import SEO from '../components/SEO'
-import CardLink from '../components/cardLink'
-import Card from '../components/card'
+import Layout from "../components/layout"
+import SEO from "../components/SEO"
+import CardLink from "../components/cardLink"
+import Card from "../components/card"
 
 const IndexPage = () => {
-
   const data = useStaticQuery(graphql`
-  query {
+    query {
       imgGr1: file(relativePath: { eq: "angel.png" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 300) {
@@ -51,7 +50,7 @@ const IndexPage = () => {
         nodes {
           postac
           zdj {
-            fluid (maxWidth: 400, quality: 100) {
+            fluid(maxWidth: 400, quality: 100) {
               ...GatsbyContentfulFluid
             }
             title
@@ -61,10 +60,15 @@ const IndexPage = () => {
               html
             }
           }
+          text2Html {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
       }
 
-      allContentfulGrupy(sort: {order: ASC, fields: nrGrupy}) {
+      allContentfulGrupy(sort: { order: ASC, fields: nrGrupy }) {
         nodes {
           nrGrupy
           nazwaGrupy
@@ -75,8 +79,8 @@ const IndexPage = () => {
           }
         }
       }
-  }
-  `);
+    }
+  `)
 
   const imgGr1 = data.imgGr1.childImageSharp.fluid
   const imgGr2 = data.imgGr2.childImageSharp.fluid
@@ -89,22 +93,21 @@ const IndexPage = () => {
       <SEO title="Home" />
       <div className="container">
         <div className="flex3-1 card-wrapper">
-
-          {data.allContentfulGrupy.nodes.map((node) => {
-
-            let imgCard = "";
+          {data.allContentfulGrupy.nodes.map(node => {
+            let imgCard = ""
 
             switch (node.nrGrupy) {
-              case 1: imgCard = imgGr1;
-                break;
+              case 1:
+                imgCard = imgGr1
+                break
 
               case 2:
-                imgCard = imgGr2;
-                break;
+                imgCard = imgGr2
+                break
 
               case 3:
-                imgCard = imgGr3;
-                break;
+                imgCard = imgGr3
+                break
 
               default: // Do nothing
             }
@@ -112,26 +115,34 @@ const IndexPage = () => {
             return (
               <CardLink
                 cardTitle={node.nazwaGrupy}
-                cardText={node.childContentfulGrupyOpiekunowieGrupyTextNode.childMarkdownRemark.html}
+                cardText={
+                  node.childContentfulGrupyOpiekunowieGrupyTextNode
+                    .childMarkdownRemark.html
+                }
                 dataImg={imgCard}
-                path={`grupa${node.nrGrupy}`} />
+                path={`grupa${node.nrGrupy}`}
+              />
             )
           })}
-
         </div>
 
-        <Card cardTitle={jp2.postac}
+        <Card
+          cardTitle={jp2.postac}
           cardSecondTitle="Nasz patron"
           cardImg={jp2.zdj.fluid}
           alt={jp2.zdj.title}
-          tekstHtml={jp2.opis.childMarkdownRemark.html} />
+          tekstHtml={jp2.opis.childMarkdownRemark.html}
+          tekst2Html={jp2.text2Html.childMarkdownRemark.html}
+        />
       </div>
 
-      <Img fluid={kids1}
+      <Img
+        fluid={kids1}
         className="footer-image"
         objectFit="cover"
-        alt="kids" />
-    </Layout >
+        alt="kids"
+      />
+    </Layout>
   )
 }
 
