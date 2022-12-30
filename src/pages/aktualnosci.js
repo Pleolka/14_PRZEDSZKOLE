@@ -59,7 +59,7 @@ const Aktualnosci = () => {
           return (
             <CardBig
               videoSrcURL={
-                node.youTubeLink == null
+                node.youTubeLink === "ten tekst zamieniamy na link"
                   ? ""
                   : node.youTubeLink.replace(
                       "https://youtu.be/",
@@ -68,7 +68,7 @@ const Aktualnosci = () => {
               }
               videiTitle="Przedszkole nr 8"
               zdjMini={node.zdjMini}
-              plakat={node.plakat}
+              plakat={node.plakat == null ? "" : node.plakat}
               cardTitle={node.tytul}
               cardDate={node.data}
               cardTekst={
