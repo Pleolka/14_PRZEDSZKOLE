@@ -46,11 +46,15 @@ const CardBig = props => {
 
         <div className="card-big-img">
           <span>
-            <Img
-              fluid={props.plakat === null ? "" : props.plakat.fluid}
-              objectFit="contain"
-              alt={props.plakat === null ? "" : props.plakat.title}
-            />
+            {props.plakat.title === "tech" ? (
+              <></>
+            ) : (
+              <Img
+                fluid={props.plakat === null ? "" : props.plakat.fluid}
+                objectFit="contain"
+                alt={props.plakat === null ? "" : props.plakat.title}
+              />
+            )}
           </span>
         </div>
       </div>
