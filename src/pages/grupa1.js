@@ -103,7 +103,9 @@ const Grupa1 = () => {
                     : node.tematyka.childMarkdownRemark.html
                 }
                 dydaktyka={
-                  node.dydaktyka ? "" : node.dydaktyka.childMarkdownRemark.html
+                  node.dydaktyka == null
+                    ? ""
+                    : node.dydaktyka.childMarkdownRemark.html
                 }
                 katecheza={
                   node.katecheza === null
@@ -134,7 +136,9 @@ const Grupa1 = () => {
                     : node.tematyka.childMarkdownRemark.html
                 }
                 dydaktyka={
-                  node.dydaktyka ? "" : node.dydaktyka.childMarkdownRemark.html
+                  node.dydaktyka == null
+                    ? ""
+                    : node.dydaktyka.childMarkdownRemark.html
                 }
                 katecheza={
                   node.katecheza === null
