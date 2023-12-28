@@ -58,7 +58,7 @@ const Statut = () => {
             .statutDoPobrania.file.url
         }
       >
-        <Img fixed={icon} alt="logo" />
+        <Img fixed={data.icon.childImageSharp.fixed} alt="logo" />
         <p>
           {
             data.allContentfulInformacjeDodatkoweOPrzedszkolu.edges[0].node
