@@ -84,7 +84,9 @@ const Grupa1 = () => {
                 miesiac={node.miesiac}
                 date={node.date}
                 group={node.grupa}
-                opis={node.opis.childMarkdownRemark.html}
+                opis={
+                  node.opis == null ? "" : node.opis.childMarkdownRemark.html
+                }
                 wiersz={
                   node.wiersz == null
                     ? ""
@@ -95,8 +97,14 @@ const Grupa1 = () => {
                     ? ""
                     : node.piosenka.childMarkdownRemark.html
                 }
-                tematyka={node.tematyka.childMarkdownRemark.html}
-                dydaktyka={node.dydaktyka.childMarkdownRemark.html}
+                tematyka={
+                  node.tematyka == null
+                    ? ""
+                    : node.tematyka.childMarkdownRemark.html
+                }
+                dydaktyka={
+                  node.dydaktyka ? "" : node.dydaktyka.childMarkdownRemark.html
+                }
                 katecheza={
                   node.katecheza === null
                     ? ""
@@ -107,7 +115,9 @@ const Grupa1 = () => {
                 month={node.miesiac}
                 date={node.date}
                 group={node.grupa}
-                opis={node.opis.childMarkdownRemark.html}
+                opis={
+                  node.opis == null ? "" : node.opis.childMarkdownRemark.html
+                }
                 wiersz={
                   node.wiersz == null
                     ? ""
@@ -118,8 +128,14 @@ const Grupa1 = () => {
                     ? ""
                     : node.piosenka.childMarkdownRemark.html
                 }
-                tematyka={node.tematyka.childMarkdownRemark.html}
-                dydaktyka={node.dydaktyka.childMarkdownRemark.html}
+                tematyka={
+                  node.tematyka == null
+                    ? ""
+                    : node.tematyka.childMarkdownRemark.html
+                }
+                dydaktyka={
+                  node.dydaktyka ? "" : node.dydaktyka.childMarkdownRemark.html
+                }
                 katecheza={
                   node.katecheza === null
                     ? ""

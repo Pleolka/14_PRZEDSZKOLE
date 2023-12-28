@@ -84,11 +84,27 @@ const Grupa3 = () => {
                 miesiac={node.miesiac}
                 date={node.date}
                 group={node.grupa}
-                opis={node.opis.childMarkdownRemark.html}
-                wiersz={node.wiersz.childMarkdownRemark.html}
-                piosenka={node.piosenka.childMarkdownRemark.html}
-                tematyka={node.tematyka.childMarkdownRemark.html}
-                dydaktyka={node.dydaktyka.childMarkdownRemark.html}
+                opis={
+                  node.opis == null ? "" : node.opis.childMarkdownRemark.html
+                }
+                wiersz={
+                  node.wiersz == null
+                    ? ""
+                    : node.wiersz.childMarkdownRemark.html
+                }
+                piosenka={
+                  node.piosenka == null
+                    ? ""
+                    : node.piosenka.childMarkdownRemark.html
+                }
+                tematyka={
+                  node.tematyka == null
+                    ? ""
+                    : node.tematyka.childMarkdownRemark.html
+                }
+                dydaktyka={
+                  node.dydaktyka ? "" : node.dydaktyka.childMarkdownRemark.html
+                }
                 katecheza={
                   node.katecheza === null
                     ? ""
@@ -99,11 +115,27 @@ const Grupa3 = () => {
                 month={node.miesiac}
                 date={node.date}
                 group={node.grupa}
-                opis={node.opis.childMarkdownRemark.html}
-                wiersz={node.wiersz.childMarkdownRemark.html}
-                piosenka={node.piosenka.childMarkdownRemark.html}
-                tematyka={node.tematyka.childMarkdownRemark.html}
-                dydaktyka={node.dydaktyka.childMarkdownRemark.html}
+                opis={
+                  node.opis == null ? "" : node.opis.childMarkdownRemark.html
+                }
+                wiersz={
+                  node.wiersz == null
+                    ? ""
+                    : node.wiersz.childMarkdownRemark.html
+                }
+                piosenka={
+                  node.piosenka == null
+                    ? ""
+                    : node.piosenka.childMarkdownRemark.html
+                }
+                tematyka={
+                  node.tematyka == null
+                    ? ""
+                    : node.tematyka.childMarkdownRemark.html
+                }
+                dydaktyka={
+                  node.dydaktyka ? "" : node.dydaktyka.childMarkdownRemark.html
+                }
                 katecheza={
                   node.katecheza === null
                     ? ""
