@@ -44,28 +44,28 @@ const Statut = () => {
   return (
     <Layout>
       <SEO title="Statut przedszkola" />
+      <div className="container">
+        <h3>Do pobrania</h3>
 
-      <div
+        <a
+          href={
+            data.allContentfulInformacjeDodatkoweOPrzedszkolu.edges[0].node
+              .statutDoPobrania.file.url
+          }
+        >
+          <Img fixed={data.icon.childImageSharp.fixed} alt="logo" />
+          <p>
+            {
+              data.allContentfulInformacjeDodatkoweOPrzedszkolu.edges[0].node
+                .statutDoPobrania.file.fileName
+            }
+          </p>
+        </a>
+      </div>
+      {/* <div
         className="container statut"
         dangerouslySetInnerHTML={{ __html: statutHTML }}
-      ></div>
-
-      <h3>Do pobrania</h3>
-
-      <a
-        href={
-          data.allContentfulInformacjeDodatkoweOPrzedszkolu.edges[0].node
-            .statutDoPobrania.file.url
-        }
-      >
-        <Img fixed={data.icon.childImageSharp.fixed} alt="logo" />
-        <p>
-          {
-            data.allContentfulInformacjeDodatkoweOPrzedszkolu.edges[0].node
-              .statutDoPobrania.file.fileName
-          }
-        </p>
-      </a>
+      ></div> */}
     </Layout>
   )
 }
