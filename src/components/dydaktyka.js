@@ -27,19 +27,27 @@ const Dydaktyka = props => {
         ></div>
       </div>
 
-      <div className="dyd-txt">
-        <div
-          className="dyd-header-opis"
-          dangerouslySetInnerHTML={{ __html: props.wiersz }}
-        ></div>
-      </div>
+      {props.wiersz === null ? (
+        ""
+      ) : (
+        <div className="dyd-txt">
+          <div
+            className="dyd-header-opis"
+            dangerouslySetInnerHTML={{ __html: props.wiersz }}
+          ></div>
+        </div>
+      )}
 
-      <div className="dyd-txt">
-        <div
-          className="dyd-header-opis"
-          dangerouslySetInnerHTML={{ __html: props.piosenka }}
-        ></div>
-      </div>
+      {props.piosenka === null ? (
+        ""
+      ) : (
+        <div className="dyd-txt">
+          <div
+            className="dyd-header-opis"
+            dangerouslySetInnerHTML={{ __html: props.piosenka }}
+          ></div>
+        </div>
+      )}
 
       <div className="dyd-txt">
         <div
