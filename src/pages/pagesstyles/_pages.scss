@@ -221,6 +221,24 @@
 
 //***************STATUT
 
+.dopobrania {
+    h3 {
+        text-align: center;
+        margin-bottom: 3rem;
+        margin-top: 4rem;
+    } 
+    
+    a {
+        text-decoration: underline;
+        display: flex;
+        margin-bottom: 2rem;
+
+        p {
+            padding-left: 1em;
+        }
+    }
+}
+
 .statut,
 .regulamin {
     white-space: pre-wrap;

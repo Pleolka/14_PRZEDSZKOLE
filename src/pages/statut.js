@@ -44,8 +44,8 @@ const Statut = () => {
   return (
     <Layout>
       <SEO title="Statut przedszkola" />
-      <div className="container">
-        <h3>Do pobrania</h3>
+      <div className="container dopobrania">
+        <h3>Statut do pobrania</h3>
 
         <a
           href={
