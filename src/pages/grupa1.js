@@ -85,8 +85,16 @@ const Grupa1 = () => {
                 date={node.date}
                 group={node.grupa}
                 opis={node.opis.childMarkdownRemark.html}
-                wiersz={node.wiersz.childMarkdownRemark.html}
-                piosenka={node.piosenka.childMarkdownRemark.html}
+                wiersz={
+                  node.wiersz == null
+                    ? ""
+                    : node.wiersz.childMarkdownRemark.html
+                }
+                piosenka={
+                  node.piosenka == null
+                    ? ""
+                    : node.piosenka.childMarkdownRemark.html
+                }
                 tematyka={node.tematyka.childMarkdownRemark.html}
                 dydaktyka={node.dydaktyka.childMarkdownRemark.html}
                 katecheza={
