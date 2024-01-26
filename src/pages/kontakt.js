@@ -84,14 +84,14 @@ const Kontakt = () => {
             return (
               <div>
                 <h5>
-                  {poradnia.nazwa}
+                  {poradnia.nazwa === null ? "" : poradnia.nazwa}
                   <br />
-                  {poradnia.tytul}
+                  {poradnia.tytul === null ? "" : poradnia.tytul}
                 </h5>
                 <p>
-                  {poradnia.ulica}
+                  {poradnia.ulica === null ? "" : poradnia.ulica}
                   <br />
-                  {poradnia.miasto}
+                  {poradnia.miasto === null ? "" : poradnia.miasto}
                 </p>
                 <p>
                   {poradnia.informacjeDodatkowe === null
