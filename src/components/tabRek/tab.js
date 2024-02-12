@@ -43,11 +43,11 @@ class Tab extends React.Component {
     const listContent3 =
       this.state.isActive === "3" ? (
         <TabContents className={""} dataTab="3" content={this.props.wazneInfo}>
-          <Img
+          {/* <Img
             fluid={this.props.tabRekrutacja.fluid}
             objectFit="contain"
             alt={this.props.tabRekrutacja.title}
-          />
+          /> */}
         </TabContents>
       ) : (
         <TabContents style={{ display: "none" }} dataTab="3" />
