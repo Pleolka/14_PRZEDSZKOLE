@@ -22,7 +22,13 @@ const DlaRodzicow = () => {
           data
           tytul
           idNumber
-          doPobrania
+          doPobrania {
+            description
+            file {
+              url
+              fileName
+            }
+          }
           childContentfulDlaRodzicowOpisRichTextNode {
             json
             childContentfulRichText {

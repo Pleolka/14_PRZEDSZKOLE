@@ -9,6 +9,7 @@ const TabContents = props => {
       data-tab={props.dataTab}
     >
       {documentToReactComponents(props.content)}
+      {props.doPobrania ? <p>{props.doPobrania.file.fileName}</p> : ""}
     </div>
   )
 }
