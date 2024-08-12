@@ -24,13 +24,13 @@ const TabContents = props => {
     >
       {documentToReactComponents(props.content)}
       {props.doPobrania ? (
-        <>
+        <div className="dopobrania">
           <h3>Do pobrania</h3>
           <a href={props.doPobrania.file.url}>
             <Img fixed={icon} alt="logo" />
             <p>{props.doPobrania.file.fileName}</p>
           </a>
-        </>
+        </div>
       ) : (
         ""
       )}
