@@ -60,11 +60,16 @@ const DlaRodzicow = () => {
                 className={
                   node.tytul === "Ramowy rozkład dnia" ? "flex2-2 flexP" : ""
                 }
-                dangerouslySetInnerHTML={{
-                  __html:
-                    node.childContentfulDlaRodzicowOpisRichTextNode
-                      .childContentfulRichText.html,
-                }}
+                dangerouslySetInnerHTML={
+                  node.childContentfulDlaRodzicowOpisRichTextNode
+                    .childContentfulRichText.html
+                    ? {
+                        __html:
+                          node.childContentfulDlaRodzicowOpisRichTextNode
+                            .childContentfulRichText.html,
+                      }
+                    : ""
+                }
               ></div>
             </div>
           )
